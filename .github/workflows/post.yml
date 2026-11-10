@@ -2,7 +2,7 @@ name: Post to Instagram (Ruh Corner)
 
 on:
   schedule:
-    - cron: "0 1 * * *"     # 06:30 IST - morning Reel (ayah / dua)
+    - cron: "0 1 * * *"     # 06:30 IST - morning story Reel
     - cron: "0 3 * * *"     # 08:30 IST - backup (does nothing if the post already went out)
     - cron: "30 7 * * *"    # 13:00 IST - tasbih Reel
     - cron: "30 9 * * *"    # 15:00 IST - backup
@@ -17,10 +17,10 @@ on:
       kind:
         description: "What to make"
         type: choice
-        options: [auto, tasbih, ayah, dua, hadith]
+        options: [auto, story, tasbih, hadith, ayah, dua]
         default: auto
       format:
-        description: "Format (tasbih is always a Reel, hadith always a carousel)"
+        description: "Format (story and tasbih are always Reels, hadith always a carousel)"
         type: choice
         options: [auto, reel, carousel]
         default: auto
