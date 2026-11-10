@@ -9,10 +9,7 @@
       "time": "06:30",
       "format": "reel",
       "kinds": [
-        "story",
-        "ayah",
-        "story",
-        "dua"
+        "story"
       ]
     },
     {
@@ -28,10 +25,7 @@
       "time": "19:30",
       "format": "carousel",
       "kinds": [
-        "hadith",
-        "ayah",
-        "hadith",
-        "dua"
+        "hadith"
       ]
     }
   ],
@@ -78,5 +72,6 @@
     ]
   },
   "max_hashtags": 11,
-  "dhikr_voice": "files"
+  "dhikr_voice": "files",
+  "story_recitation": false
 }

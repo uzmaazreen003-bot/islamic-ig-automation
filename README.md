@@ -6,9 +6,9 @@ Runs on GitHub Actions; your laptop is not needed.
 ## What it posts (IST)
 | Time | Format | Content |
 |---|---|---|
-| 06:30 | Reel | Story reel (dark calm parable, ends with verse/hadith) and Quran ayah / dua with real recitation, alternating |
-| 13:00 | Reel | Tasbih beads falling into three jars (11 each, repeat 3 rounds = 33), spoken dhikr, calm natural sounds |
-| 19:30 | Carousel | Hadith (Sahih al-Bukhari / Forty Hadith of an-Nawawi), ayah or dua |
+| 06:30 | Reel | Story reel: dark, calm parable with a stick figure and light; ends with a verse or hadith |
+| 13:00 | Reel | Tasbih beads falling into three jars (11 each, repeat 3 rounds = 33), calm natural sounds only (no voice) |
+| 19:30 | Carousel | Hadith (Sahih al-Bukhari / Forty Hadith of an-Nawawi) |
 
 Backup runs 2 hours later skip automatically if the post already went out. Edit `data/config.json` -> `slots` to change times or content.
 

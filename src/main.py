@@ -109,7 +109,8 @@ def cmd_plan(args):
     elif kind == "story":
         out = os.path.join(OUT, f"{stem}.mp4")
         with tempfile.TemporaryDirectory() as tmp:
-            info = story.make_reel(item, story.ending_content(item["ending"], pools), handle, out, seed=seed, workdir=tmp)
+            info = story.make_reel(item, story.ending_content(item["ending"], pools), handle, out, seed=seed, workdir=tmp,
+                                   use_recitation=cfg.get("story_recitation", False))
         files = [out]
     elif fmt == "reel":
         out = os.path.join(OUT, f"{stem}.mp4")

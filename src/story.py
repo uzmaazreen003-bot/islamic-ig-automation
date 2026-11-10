@@ -127,9 +127,9 @@ def draw_figure(draw_img, x, y_ground, pose, t, color, scale=1.0, lean_extra=0.0
     draw_img.alpha_composite(patch, (int(x - pw / 2), int(y_ground - ph + 6)))
 
 
-def make_reel(story, ending, handle, out_path, seed=0, workdir="."):
+def make_reel(story, ending, handle, out_path, seed=0, workdir=".", use_recitation=False):
     rng = np.random.default_rng(seed + 21)
-    recit = voice.recitation(ending["numbers"], workdir) if ending.get("numbers") else None
+    recit = voice.recitation(ending["numbers"], workdir) if (use_recitation and ending.get("numbers")) else None
     bg = background()
     beam, beam_glow = beam_layer()
     serif = lambda s: theme.font("Amiri-Regular.ttf", s)       # noqa: E731

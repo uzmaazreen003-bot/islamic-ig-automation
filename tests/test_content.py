@@ -26,13 +26,13 @@ assert content.due_slot(fails, cfg, at(7, 0)) is None
 # 4) kinds rotate per slot, items never repeat until the pool is used up
 morning = cfg["slots"][0]
 seen_kinds, used, hist = [], set(), []
-for day in range(1, 11):
+for day in range(1, 31):
     kind = content.pick_kind(morning, hist)
     key = content.pick_key(kind, pools, hist, f"2026-11-{day:02d}")
     assert key not in used, (day, key)
     used.add(key); seen_kinds.append(kind)
     hist.append({"date": f"2026-11-{day:02d}", "slot": "morning", "status": "published", "kind": kind, "key": key})
-assert seen_kinds[:4] == ["story", "ayah", "story", "dua"], seen_kinds
+assert set(seen_kinds) == {"story"}, seen_kinds
 # 5) captions contain the source reference and no empty fields
 for kind in ("ayah", "dua", "hadith", "tasbih", "story"):
     key = next(iter(pools[kind]))
