@@ -1,0 +1,91 @@
+{
+  "note": "The short story lines are original reflections. The closing verse/hadith is always copied verbatim from quran.json / hadith.json (an excerpt must be an exact part of the source text).",
+  "stories": [
+    {"id": "one-step", "hook": "You were never too far. Just take the first step. 🤍",
+     "scenes": [
+       {"text": "He walked away from Allah.", "pose": "walk", "x": [0.18, 0.40], "beam": 0.55},
+       {"text": "Not in a day. One step at a time.", "pose": "walk", "x": [0.40, 0.50], "beam": 0.35},
+       {"text": "One prayer skipped.", "pose": "walk", "x": [0.50, 0.57], "beam": 0.25},
+       {"text": "One page of Quran left unread.", "pose": "walk", "x": [0.57, 0.63], "beam": 0.18},
+       {"text": "One dua forgotten.", "pose": "slump", "x": [0.63, 0.68], "beam": 0.1},
+       {"text": "Until the way back felt too long.", "pose": "slump", "x": [0.68, 0.70], "beam": 0.05},
+       {"text": "He thought: it is too late.", "pose": "slump", "x": [0.70, 0.70], "beam": 0.04},
+       {"text": "Then he remembered.", "pose": "stand", "x": [0.70, 0.70], "beam": 0.3},
+       {"text": "The door of return was still open.", "pose": "stand", "x": [0.70, 0.70], "beam": 0.6},
+       {"text": "So he took one step.", "pose": "walk", "x": [0.70, 0.52], "beam": 0.85, "accent": true}
+     ],
+     "ending": {"type": "hadith", "key": "bukhari-7405", "excerpt": "and if he comes to Me walking, I go to him running"}},
+    {"id": "he-is-near", "hook": "When you feel alone, whisper it to Him. 🤍",
+     "scenes": [
+       {"text": "He felt alone.", "pose": "slump", "x": [0.5, 0.5], "beam": 0.1},
+       {"text": "There was nobody to tell.", "pose": "slump", "x": [0.5, 0.5], "beam": 0.08},
+       {"text": "So he whispered it. Only in his heart.", "pose": "stand", "x": [0.5, 0.5], "beam": 0.3},
+       {"text": "No words were needed.", "pose": "stand", "x": [0.5, 0.5], "beam": 0.5},
+       {"text": "Someone was listening.", "pose": "open", "x": [0.5, 0.5], "beam": 0.8, "accent": true}
+     ],
+     "ending": {"type": "ayah", "key": "2:186"}},
+    {"id": "ease-after-hardship", "hook": "Keep walking. Ease is coming. 🤍",
+     "scenes": [
+       {"text": "The hardship felt endless.", "pose": "slump", "x": [0.25, 0.32], "beam": 0.06},
+       {"text": "Every day heavier than the last.", "pose": "slump", "x": [0.32, 0.42], "beam": 0.06},
+       {"text": "But he kept walking.", "pose": "walk", "x": [0.42, 0.55], "beam": 0.12},
+       {"text": "One more day.", "pose": "walk", "x": [0.55, 0.62], "beam": 0.2},
+       {"text": "Just one more day.", "pose": "walk", "x": [0.62, 0.68], "beam": 0.3},
+       {"text": "Then, a small light.", "pose": "stand", "x": [0.68, 0.68], "beam": 0.75, "accent": true}
+     ],
+     "ending": {"type": "ayah", "key": "94:5-6"}},
+    {"id": "true-wealth", "hook": "How much is enough? 🤍",
+     "scenes": [
+       {"text": "He wanted more.", "pose": "walk", "x": [0.2, 0.4], "beam": 0.4},
+       {"text": "More money. More things.", "pose": "walk", "x": [0.4, 0.55], "beam": 0.3},
+       {"text": "But the feeling never filled.", "pose": "slump", "x": [0.55, 0.6], "beam": 0.12},
+       {"text": "One night he sat in silence.", "pose": "stand", "x": [0.6, 0.6], "beam": 0.3},
+       {"text": "And felt grateful for what he already had.", "pose": "open", "x": [0.6, 0.6], "beam": 0.8, "accent": true}
+     ],
+     "ending": {"type": "hadith", "key": "bukhari-6446"}},
+    {"id": "come-back", "hook": "Go back to Him, again and again. 🤍",
+     "scenes": [
+       {"text": "He made the same mistake again.", "pose": "slump", "x": [0.5, 0.5], "beam": 0.06},
+       {"text": "And felt too ashamed to ask Allah again.", "pose": "slump", "x": [0.5, 0.5], "beam": 0.05},
+       {"text": "But he turned back anyway.", "pose": "stand", "x": [0.5, 0.5], "beam": 0.35},
+       {"text": "With nothing but a sincere heart.", "pose": "walk", "x": [0.5, 0.4], "beam": 0.7, "accent": true}
+     ],
+     "ending": {"type": "hadith", "key": "bukhari-6309"}},
+    {"id": "hold-back", "hook": "Real strength is quiet. 🤍",
+     "scenes": [
+       {"text": "He was about to shout.", "pose": "stand", "x": [0.5, 0.5], "beam": 0.15},
+       {"text": "His heart was racing.", "pose": "stand", "x": [0.5, 0.5], "beam": 0.1},
+       {"text": "His hands were shaking.", "pose": "stand", "x": [0.5, 0.5], "beam": 0.1},
+       {"text": "He took a breath.", "pose": "open", "x": [0.5, 0.5], "beam": 0.45},
+       {"text": "And stayed silent.", "pose": "stand", "x": [0.5, 0.5], "beam": 0.8, "accent": true}
+     ],
+     "ending": {"type": "hadith", "key": "bukhari-6114"}},
+    {"id": "small-kindness", "hook": "No kindness is too small. 🤍",
+     "scenes": [
+       {"text": "Nobody was watching.", "pose": "walk", "x": [0.15, 0.4], "beam": 0.2},
+       {"text": "A thirsty dog by the road.", "pose": "walk", "x": [0.4, 0.55], "beam": 0.2},
+       {"text": "He had very little water.", "pose": "stand", "x": [0.55, 0.55], "beam": 0.3},
+       {"text": "He gave it anyway.", "pose": "open", "x": [0.55, 0.55], "beam": 0.85, "accent": true}
+     ],
+     "ending": {"type": "hadith", "key": "bukhari-173"}},
+    {"id": "little-but-regular", "hook": "Small and steady beats big and rare. 🤍",
+     "scenes": [
+       {"text": "He wanted to do big things.", "pose": "stand", "x": [0.3, 0.3], "beam": 0.3},
+       {"text": "But he could only do small things.", "pose": "slump", "x": [0.3, 0.3], "beam": 0.1},
+       {"text": "A little Quran every day.", "pose": "walk", "x": [0.3, 0.42], "beam": 0.3},
+       {"text": "A little dhikr.", "pose": "walk", "x": [0.42, 0.54], "beam": 0.4},
+       {"text": "A little charity.", "pose": "walk", "x": [0.54, 0.66], "beam": 0.5},
+       {"text": "Day after day.", "pose": "walk", "x": [0.66, 0.8], "beam": 0.85, "accent": true}
+     ],
+     "ending": {"type": "hadith", "key": "bukhari-6464"}},
+    {"id": "two-blessings", "hook": "Two blessings we forget to thank. 🤍",
+     "scenes": [
+       {"text": "Health.", "pose": "walk", "x": [0.2, 0.4], "beam": 0.5},
+       {"text": "Free time.", "pose": "walk", "x": [0.4, 0.55], "beam": 0.5},
+       {"text": "He had both.", "pose": "stand", "x": [0.55, 0.55], "beam": 0.5},
+       {"text": "And never noticed.", "pose": "slump", "x": [0.55, 0.55], "beam": 0.1},
+       {"text": "Today, he did.", "pose": "open", "x": [0.55, 0.55], "beam": 0.8, "accent": true}
+     ],
+     "ending": {"type": "hadith", "key": "bukhari-6412"}}
+  ]
+}

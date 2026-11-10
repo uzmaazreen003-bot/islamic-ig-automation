@@ -1,0 +1,19 @@
+{
+  "note": "Short, universally known dhikr phrases. Arabic is fully vowelled; meanings are plain translations.",
+  "dhikr": {
+    "subhanallah": {"ar": "سُبْحَانَ ٱللَّهِ", "tr": "SubhanAllah", "en": "Glory be to Allah"},
+    "alhamdulillah": {"ar": "ٱلْحَمْدُ لِلَّهِ", "tr": "Alhamdulillah", "en": "All praise is due to Allah"},
+    "allahuakbar": {"ar": "ٱللَّهُ أَكْبَرُ", "tr": "Allahu Akbar", "en": "Allah is the Greatest"},
+    "lailaha": {"ar": "لَا إِلَٰهَ إِلَّا ٱللَّهُ", "tr": "La ilaha illallah", "en": "There is no god but Allah"},
+    "astaghfirullah": {"ar": "أَسْتَغْفِرُ ٱللَّهَ", "tr": "Astaghfirullah", "en": "I seek forgiveness from Allah"},
+    "bihamdihi": {"ar": "سُبْحَانَ ٱللَّهِ وَبِحَمْدِهِ", "tr": "SubhanAllahi wa bihamdihi", "en": "Glory and praise be to Allah"},
+    "hawqala": {"ar": "لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِٱللَّهِ", "tr": "La hawla wa la quwwata illa billah", "en": "There is no power or might except with Allah"},
+    "salawat": {"ar": "ٱللَّهُمَّ صَلِّ عَلَىٰ مُحَمَّدٍ", "tr": "Allahumma salli 'ala Muhammad", "en": "O Allah, send blessings upon Muhammad"}
+  },
+  "sets": [
+    {"id": "after_prayer", "title": "Tasbih after every prayer", "items": ["subhanallah", "alhamdulillah", "allahuakbar"],
+     "count": 11, "source": "Sahih Muslim 597"},
+    {"id": "forgiveness", "title": "A little dhikr for your day", "items": ["astaghfirullah", "lailaha", "bihamdihi"], "count": 11, "source": ""},
+    {"id": "strength", "title": "A little dhikr for your day", "items": ["hawqala", "salawat", "astaghfirullah"], "count": 11, "source": ""}
+  ]
+}

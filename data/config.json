@@ -1,0 +1,81 @@
+{
+  "handle": "@ruh_corner",
+  "ig_user_id": "17841421313339699",
+  "video_method": "auto",
+  "max_lateness_hours": 9,
+  "slots": [
+    {
+      "id": "morning",
+      "time": "06:30",
+      "format": "reel",
+      "kinds": [
+        "story",
+        "ayah",
+        "story",
+        "dua"
+      ]
+    },
+    {
+      "id": "noon",
+      "time": "13:00",
+      "format": "reel",
+      "kinds": [
+        "tasbih"
+      ]
+    },
+    {
+      "id": "evening",
+      "time": "19:30",
+      "format": "carousel",
+      "kinds": [
+        "hadith",
+        "ayah",
+        "hadith",
+        "dua"
+      ]
+    }
+  ],
+  "hashtags": {
+    "base": [
+      "#ruhcorner",
+      "#islamicreminders",
+      "#muslim",
+      "#islam",
+      "#allah"
+    ],
+    "tasbih": [
+      "#tasbih",
+      "#dhikr",
+      "#zikr",
+      "#subhanallah",
+      "#alhamdulillah",
+      "#allahuakbar"
+    ],
+    "ayah": [
+      "#quran",
+      "#quranverses",
+      "#quranreminder",
+      "#ayahoftheday"
+    ],
+    "dua": [
+      "#dua",
+      "#duas",
+      "#quranicdua",
+      "#supplication"
+    ],
+    "hadith": [
+      "#hadith",
+      "#sunnah",
+      "#prophetmuhammad",
+      "#hadithoftheday"
+    ],
+    "story": [
+      "#islamicstories",
+      "#islamicreminder",
+      "#reminder",
+      "#faith",
+      "#iman"
+    ]
+  },
+  "max_hashtags": 11
+}
