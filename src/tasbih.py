@@ -156,9 +156,9 @@ def build_timeline(counts):
     return sets, total
 
 
-def make_reel(dhikr_set, dhikr_lib, handle, out_path, seed=0, workdir="."):
+def make_reel(dhikr_set, dhikr_lib, handle, out_path, seed=0, workdir=".", voice_mode="files"):
     pal = theme.palette_for(seed)
-    items = [dict(dhikr_lib[k]) for k in dhikr_set["items"]]
+    items = [dict(dhikr_lib[k], id=k) for k in dhikr_set["items"]]
     per = dhikr_set["count"]
     n_sets = len(items)
     sets, total = build_timeline([per] * n_sets)
@@ -186,7 +186,7 @@ def make_reel(dhikr_set, dhikr_lib, handle, out_path, seed=0, workdir="."):
 
     # -------- audio
     rng_a = np.random.default_rng(seed + 5)
-    clips = [voice.dhikr(it["ar"], workdir, f"{seed}-{i}") for i, it in enumerate(items)]
+    clips = [voice.dhikr(it["ar"], workdir, f"{seed}-{i}", key=it["id"], mode=voice_mode) for i, it in enumerate(items)]
     events = [(0.35, audio.bowl(432, 3.0, 0.12))]
     for si, s in enumerate(sets):
         clip = clips[si]

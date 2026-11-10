@@ -104,7 +104,7 @@ def cmd_plan(args):
     if kind == "tasbih":
         out = os.path.join(OUT, f"{stem}.mp4")
         with tempfile.TemporaryDirectory() as tmp:
-            info = tasbih.make_reel(item, pools["dhikr_lib"], handle, out, seed=seed, workdir=tmp)
+            info = tasbih.make_reel(item, pools["dhikr_lib"], handle, out, seed=seed, workdir=tmp, voice_mode=cfg.get("dhikr_voice", "files"))
         files = [out]
     elif kind == "story":
         out = os.path.join(OUT, f"{stem}.mp4")

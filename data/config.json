@@ -77,5 +77,6 @@
       "#iman"
     ]
   },
-  "max_hashtags": 11
+  "max_hashtags": 11,
+  "dhikr_voice": "files"
 }

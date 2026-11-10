@@ -71,8 +71,42 @@ async def _tts(text, voice, path, rate):
     await edge_tts.Communicate(text, voice, rate=rate).save(path)
 
 
-def dhikr(text, workdir, name):
-    """Short Arabic phrase spoken slowly and clearly (fully vowelled text). None if TTS is unavailable."""
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+AUDIO_EXT = (".m4a", ".mp3", ".wav", ".ogg", ".opus", ".aac", ".amr", ".flac", ".webm")
+
+
+def recorded(key):
+    """A voice recording you made yourself (e.g. subhanallah.m4a), if you uploaded one. Looked up in a few folders."""
+    if not key:
+        return None
+    dirs = [os.environ.get("IG_AUDIO_DIR", ""), os.path.join(ROOT, "assets", "audio", "dhikr"),
+            os.path.join(ROOT, "assets", "audio"), os.path.join(ROOT, "audio"), ROOT]
+    for d in dirs:
+        if not d or not os.path.isdir(d):
+            continue
+        for fn in sorted(os.listdir(d)):
+            stem, ext = os.path.splitext(fn)
+            if stem.lower().replace(" ", "").replace("_", "").replace("-", "") == key and ext.lower() in AUDIO_EXT:
+                try:
+                    clip = _trim(audio.decode_audio(os.path.join(d, fn)))
+                    print(f"[voice] using your recording {fn}: {len(clip) / audio.SR:.1f}s")
+                    return _normalize(clip, 0.8)
+                except Exception as exc:                   # noqa: BLE001
+                    print(f"[voice] could not read {fn}: {exc}")
+    return None
+
+
+def dhikr(text, workdir, name, key=None, mode="files"):
+    """Voice for one dhikr phrase.
+
+    mode "files" (default): only a recording you uploaded; otherwise no voice (natural sounds only).
+    mode "tts": the free neural Arabic voice (pronunciation is NOT guaranteed); "off": never.
+    """
+    if mode == "off":
+        return None
+    clip = recorded(key)
+    if clip is not None or mode != "tts":
+        return clip
     try:
         import edge_tts  # noqa: F401
     except ImportError:
@@ -81,7 +115,7 @@ def dhikr(text, workdir, name):
     path = os.path.join(workdir, f"dhikr-{name}.mp3")
     for voice in TTS_VOICES:
         try:
-            asyncio.run(_tts(text, voice, path, "-18%"))
+            asyncio.run(_tts(text.replace("\u0671", "\u0627").replace("\u0670", "\u0627"), voice, path, "-18%"))
             clip = _trim(audio.decode_audio(path))
             if len(clip) > 0.4 * audio.SR:
                 print(f"[voice] dhikr '{name}' spoken with {voice}: {len(clip) / audio.SR:.1f}s")
