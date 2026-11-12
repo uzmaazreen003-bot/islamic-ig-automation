@@ -1,0 +1,140 @@
+{
+ "quizzes": [
+  {
+   "id": "angry",
+   "theme": "maroon",
+   "scenario": "Someone cuts in front of you in the queue, and says nothing.",
+   "ask": "What do you do?",
+   "options": [
+    "Say something sharp, loudly",
+    "Take a breath, let it pass",
+    "Tell everyone about it later"
+   ],
+   "answer": 1,
+   "reveal": "Strength is rarely loud.",
+   "ending": {
+    "type": "hadith",
+    "key": "bukhari-6114"
+   }
+  },
+  {
+   "id": "neighbour",
+   "theme": "dusk",
+   "scenario": "You cooked too much. The neighbour next door lives alone.",
+   "ask": "What do you do?",
+   "options": [
+    "Keep it for tomorrow",
+    "Send a small plate across",
+    "Post a photo of it"
+   ],
+   "answer": 1,
+   "reveal": "A small plate crosses a big distance.",
+   "ending": {
+    "type": "hadith",
+    "key": "bukhari-6014"
+   }
+  },
+  {
+   "id": "scroll",
+   "theme": "emerald",
+   "scenario": "It is midnight. Your phone says, one more video.",
+   "ask": "What do you do?",
+   "options": [
+    "Watch ten more",
+    "Put it down, and sleep",
+    "Open a different app"
+   ],
+   "answer": 1,
+   "reveal": "Time is a blessing that quietly slips away.",
+   "ending": {
+    "type": "hadith",
+    "key": "bukhari-6412"
+   }
+  },
+  {
+   "id": "rich",
+   "theme": "plum",
+   "scenario": "A friend just bought a bigger car than yours.",
+   "ask": "What does your heart say?",
+   "options": [
+    "I deserve better too",
+    "Good for him, and I am fine",
+    "Compare, then feel low"
+   ],
+   "answer": 1,
+   "reveal": "Enough is a kind of wealth.",
+   "ending": {
+    "type": "hadith",
+    "key": "bukhari-6446"
+   }
+  },
+  {
+   "id": "stall",
+   "theme": "emerald",
+   "scenario": "A customer is a few coins short for a small purchase.",
+   "ask": "What do you do?",
+   "options": [
+    "Say no, rules are rules",
+    "Let it go, ask her to pay later",
+    "Make a joke about it"
+   ],
+   "answer": 1,
+   "reveal": "Ease is a form of kindness.",
+   "ending": {
+    "type": "hadith",
+    "key": "bukhari-6125"
+   }
+  },
+  {
+   "id": "wallet",
+   "theme": "gold",
+   "scenario": "Your wallet is empty, and someone needs help today.",
+   "ask": "What can you still give?",
+   "options": [
+    "Nothing, I have no money",
+    "A smile and a kind word",
+    "An excuse"
+   ],
+   "answer": 1,
+   "reveal": "Good does not always cost money.",
+   "ending": {
+    "type": "hadith",
+    "key": "bukhari-6021"
+   }
+  },
+  {
+   "id": "bags",
+   "theme": "plum",
+   "scenario": "An old woman struggles with two heavy bags at the bus stop.",
+   "ask": "What do you do?",
+   "options": [
+    "Walk past, I am late",
+    "Ask, 'Can I carry these?'",
+    "Take a video"
+   ],
+   "answer": 1,
+   "reveal": "Mercy begins with one question.",
+   "ending": {
+    "type": "hadith",
+    "key": "bukhari-6013"
+   }
+  },
+  {
+   "id": "habit",
+   "theme": "dawn",
+   "scenario": "You can read for five minutes daily, or two hours once a month.",
+   "ask": "Which one lasts?",
+   "options": [
+    "Two hours, once a month",
+    "Five minutes, every day",
+    "Wait for the perfect time"
+   ],
+   "answer": 1,
+   "reveal": "Small and steady beats big and rare.",
+   "ending": {
+    "type": "hadith",
+    "key": "bukhari-6462"
+   }
+  }
+ ]
+}

@@ -22,7 +22,7 @@ DIM = (150, 142, 130)
 
 
 def hadith_body(text):
-    m = re.search(r"\bsaid\s*[:,]\s*", text[:320])
+    m = re.search(r"\bsaid\s*[:,]?\s*(?=[\"“'])|\bsaid\s*[:,]\s*", text[:320])
     body = text[m.end():] if m else text
     body = body.strip().strip('"').strip()
     return body if body[-1] in ".!?" else body + "."

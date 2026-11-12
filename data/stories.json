@@ -1,690 +1,150 @@
 {
- "note": "The short story lines are original reflections. The closing verse/hadith is always copied verbatim from quran.json / hadith.json (an excerpt must be an exact part of the source text).",
  "stories": [
   {
-   "id": "one-step",
-   "hook": "You were never too far. Just take the first step. 🤍",
+   "id": "neighbour",
+   "theme": "dusk",
+   "backdrop": "village",
+   "hook": "The plate that crossed the wall",
    "scenes": [
     {
-     "text": "He walked away from Allah.",
-     "pose": "walk",
-     "x": [
-      0.18,
-      0.4
+     "text": "Every Friday, Yusuf's mother cooked more than the family could eat.",
+     "cast": [
+      {
+       "who": "woman",
+       "x": 0.3,
+       "pose": "give"
+      }
      ],
-     "beam": 0.55
+     "props": [
+      {
+       "k": "house",
+       "x": 0.75,
+       "s": 1.0
+      },
+      {
+       "k": "plate",
+       "x": 0.45,
+       "s": 1.0
+      }
+     ],
+     "hl": [
+      "more"
+     ],
+     "focus": 0.4
     },
     {
-     "text": "Not in a day. One step at a time.",
-     "pose": "walk",
-     "x": [
-      0.4,
-      0.5
+     "text": "The old man next door lived alone. His windows were dark by sunset.",
+     "cast": [
+      {
+       "who": "elder",
+       "x": 0.7,
+       "pose": "stand",
+       "face": -1
+      }
      ],
-     "beam": 0.35
+     "props": [
+      {
+       "k": "house",
+       "x": 0.28,
+       "s": 1.0
+      }
+     ],
+     "hl": [
+      "alone"
+     ],
+     "focus": 0.7
     },
     {
-     "text": "One prayer skipped.",
-     "pose": "walk",
-     "x": [
-      0.5,
-      0.57
+     "text": "So Yusuf carried a warm plate across the lane.",
+     "cast": [
+      {
+       "who": "child",
+       "x": 0.3,
+       "pose": "walk",
+       "move": [
+        0.2,
+        0.6
+       ]
+      }
      ],
-     "beam": 0.25
+     "props": [
+      {
+       "k": "plate",
+       "x": 0.65,
+       "s": 1.0
+      },
+      {
+       "k": "house",
+       "x": 0.85,
+       "s": 1.0
+      }
+     ],
+     "hl": [
+      "warm",
+      "plate"
+     ],
+     "focus": 0.5
     },
     {
-     "text": "One page of Quran left unread.",
-     "pose": "walk",
-     "x": [
-      0.57,
-      0.63
+     "text": "The old man did not say much. His eyes said it all.",
+     "cast": [
+      {
+       "who": "child",
+       "x": 0.4,
+       "pose": "stand"
+      },
+      {
+       "who": "elder",
+       "x": 0.62,
+       "pose": "stand",
+       "face": -1,
+       "role": "other"
+      }
      ],
-     "beam": 0.18
+     "props": [
+      {
+       "k": "plate",
+       "x": 0.5,
+       "s": 0.8
+      },
+      {
+       "k": "heart",
+       "x": 0.52,
+       "s": 0.7,
+       "y": 0.52
+      }
+     ],
+     "hl": [
+      "eyes"
+     ],
+     "focus": 0.5
     },
     {
-     "text": "One dua forgotten.",
-     "pose": "slump",
-     "x": [
-      0.63,
-      0.68
+     "text": "That night, a light was on in his window.",
+     "cast": [
+      {
+       "who": "elder",
+       "x": 0.5,
+       "pose": "sit"
+      }
      ],
-     "beam": 0.1
-    },
-    {
-     "text": "Until the way back felt too long.",
-     "pose": "slump",
-     "x": [
-      0.68,
-      0.7
+     "props": [
+      {
+       "k": "house",
+       "x": 0.5,
+       "s": 1.0
+      },
+      {
+       "k": "lamp",
+       "x": 0.5,
+       "s": 1.2,
+       "y": 0.62
+      }
      ],
-     "beam": 0.05
-    },
-    {
-     "text": "He thought: it is too late.",
-     "pose": "slump",
-     "x": [
-      0.7,
-      0.7
+     "hl": [
+      "light"
      ],
-     "beam": 0.04
-    },
-    {
-     "text": "Then he remembered.",
-     "pose": "stand",
-     "x": [
-      0.7,
-      0.7
-     ],
-     "beam": 0.3
-    },
-    {
-     "text": "The door of return was still open.",
-     "pose": "stand",
-     "x": [
-      0.7,
-      0.7
-     ],
-     "beam": 0.6
-    },
-    {
-     "text": "So he took one step.",
-     "pose": "walk",
-     "x": [
-      0.7,
-      0.52
-     ],
-     "beam": 0.85,
-     "accent": true
-    }
-   ],
-   "ending": {
-    "type": "hadith",
-    "key": "bukhari-7405",
-    "excerpt": "and if he comes to Me walking, I go to him running"
-   }
-  },
-  {
-   "id": "he-is-near",
-   "hook": "When you feel alone, whisper it to Him. 🤍",
-   "scenes": [
-    {
-     "text": "He felt alone.",
-     "pose": "slump",
-     "x": [
-      0.5,
-      0.5
-     ],
-     "beam": 0.1
-    },
-    {
-     "text": "There was nobody to tell.",
-     "pose": "slump",
-     "x": [
-      0.5,
-      0.5
-     ],
-     "beam": 0.08
-    },
-    {
-     "text": "So he whispered it. Only in his heart.",
-     "pose": "stand",
-     "x": [
-      0.5,
-      0.5
-     ],
-     "beam": 0.3
-    },
-    {
-     "text": "No words were needed.",
-     "pose": "stand",
-     "x": [
-      0.5,
-      0.5
-     ],
-     "beam": 0.5
-    },
-    {
-     "text": "Someone was listening.",
-     "pose": "open",
-     "x": [
-      0.5,
-      0.5
-     ],
-     "beam": 0.8,
-     "accent": true
-    }
-   ],
-   "ending": {
-    "type": "ayah",
-    "key": "2:186"
-   }
-  },
-  {
-   "id": "ease-after-hardship",
-   "hook": "Keep walking. Ease is coming. 🤍",
-   "scenes": [
-    {
-     "text": "The hardship felt endless.",
-     "pose": "slump",
-     "x": [
-      0.25,
-      0.32
-     ],
-     "beam": 0.06
-    },
-    {
-     "text": "Every day heavier than the last.",
-     "pose": "slump",
-     "x": [
-      0.32,
-      0.42
-     ],
-     "beam": 0.06
-    },
-    {
-     "text": "But he kept walking.",
-     "pose": "walk",
-     "x": [
-      0.42,
-      0.55
-     ],
-     "beam": 0.12
-    },
-    {
-     "text": "One more day.",
-     "pose": "walk",
-     "x": [
-      0.55,
-      0.62
-     ],
-     "beam": 0.2
-    },
-    {
-     "text": "Just one more day.",
-     "pose": "walk",
-     "x": [
-      0.62,
-      0.68
-     ],
-     "beam": 0.3
-    },
-    {
-     "text": "Then, a small light.",
-     "pose": "stand",
-     "x": [
-      0.68,
-      0.68
-     ],
-     "beam": 0.75,
-     "accent": true
-    }
-   ],
-   "ending": {
-    "type": "ayah",
-    "key": "94:5-6"
-   }
-  },
-  {
-   "id": "true-wealth",
-   "hook": "How much is enough? 🤍",
-   "scenes": [
-    {
-     "text": "He wanted more.",
-     "pose": "walk",
-     "x": [
-      0.2,
-      0.4
-     ],
-     "beam": 0.4
-    },
-    {
-     "text": "More money. More things.",
-     "pose": "walk",
-     "x": [
-      0.4,
-      0.55
-     ],
-     "beam": 0.3
-    },
-    {
-     "text": "But the feeling never filled.",
-     "pose": "slump",
-     "x": [
-      0.55,
-      0.6
-     ],
-     "beam": 0.12
-    },
-    {
-     "text": "One night he sat in silence.",
-     "pose": "stand",
-     "x": [
-      0.6,
-      0.6
-     ],
-     "beam": 0.3
-    },
-    {
-     "text": "And felt grateful for what he already had.",
-     "pose": "open",
-     "x": [
-      0.6,
-      0.6
-     ],
-     "beam": 0.8,
-     "accent": true
-    }
-   ],
-   "ending": {
-    "type": "hadith",
-    "key": "bukhari-6446"
-   }
-  },
-  {
-   "id": "come-back",
-   "hook": "Go back to Him, again and again. 🤍",
-   "scenes": [
-    {
-     "text": "He made the same mistake again.",
-     "pose": "slump",
-     "x": [
-      0.5,
-      0.5
-     ],
-     "beam": 0.06
-    },
-    {
-     "text": "And felt too ashamed to ask Allah again.",
-     "pose": "slump",
-     "x": [
-      0.5,
-      0.5
-     ],
-     "beam": 0.05
-    },
-    {
-     "text": "But he turned back anyway.",
-     "pose": "stand",
-     "x": [
-      0.5,
-      0.5
-     ],
-     "beam": 0.35
-    },
-    {
-     "text": "With nothing but a sincere heart.",
-     "pose": "walk",
-     "x": [
-      0.5,
-      0.4
-     ],
-     "beam": 0.7,
-     "accent": true
-    }
-   ],
-   "ending": {
-    "type": "hadith",
-    "key": "bukhari-6309"
-   }
-  },
-  {
-   "id": "hold-back",
-   "hook": "Real strength is quiet. 🤍",
-   "scenes": [
-    {
-     "text": "He was about to shout.",
-     "pose": "stand",
-     "x": [
-      0.5,
-      0.5
-     ],
-     "beam": 0.15
-    },
-    {
-     "text": "His heart was racing.",
-     "pose": "stand",
-     "x": [
-      0.5,
-      0.5
-     ],
-     "beam": 0.1
-    },
-    {
-     "text": "His hands were shaking.",
-     "pose": "stand",
-     "x": [
-      0.5,
-      0.5
-     ],
-     "beam": 0.1
-    },
-    {
-     "text": "He took a breath.",
-     "pose": "open",
-     "x": [
-      0.5,
-      0.5
-     ],
-     "beam": 0.45
-    },
-    {
-     "text": "And stayed silent.",
-     "pose": "stand",
-     "x": [
-      0.5,
-      0.5
-     ],
-     "beam": 0.8,
-     "accent": true
-    }
-   ],
-   "ending": {
-    "type": "hadith",
-    "key": "bukhari-6114"
-   }
-  },
-  {
-   "id": "small-kindness",
-   "hook": "No kindness is too small. 🤍",
-   "scenes": [
-    {
-     "text": "Nobody was watching.",
-     "pose": "walk",
-     "x": [
-      0.15,
-      0.4
-     ],
-     "beam": 0.2
-    },
-    {
-     "text": "A thirsty dog by the road.",
-     "pose": "walk",
-     "x": [
-      0.4,
-      0.55
-     ],
-     "beam": 0.2
-    },
-    {
-     "text": "He had very little water.",
-     "pose": "stand",
-     "x": [
-      0.55,
-      0.55
-     ],
-     "beam": 0.3
-    },
-    {
-     "text": "He gave it anyway.",
-     "pose": "open",
-     "x": [
-      0.55,
-      0.55
-     ],
-     "beam": 0.85,
-     "accent": true
-    }
-   ],
-   "ending": {
-    "type": "hadith",
-    "key": "bukhari-173"
-   }
-  },
-  {
-   "id": "little-but-regular",
-   "hook": "Small and steady beats big and rare. 🤍",
-   "scenes": [
-    {
-     "text": "He wanted to do big things.",
-     "pose": "stand",
-     "x": [
-      0.3,
-      0.3
-     ],
-     "beam": 0.3
-    },
-    {
-     "text": "But he could only do small things.",
-     "pose": "slump",
-     "x": [
-      0.3,
-      0.3
-     ],
-     "beam": 0.1
-    },
-    {
-     "text": "A little Quran every day.",
-     "pose": "walk",
-     "x": [
-      0.3,
-      0.42
-     ],
-     "beam": 0.3
-    },
-    {
-     "text": "A little dhikr.",
-     "pose": "walk",
-     "x": [
-      0.42,
-      0.54
-     ],
-     "beam": 0.4
-    },
-    {
-     "text": "A little charity.",
-     "pose": "walk",
-     "x": [
-      0.54,
-      0.66
-     ],
-     "beam": 0.5
-    },
-    {
-     "text": "Day after day.",
-     "pose": "walk",
-     "x": [
-      0.66,
-      0.8
-     ],
-     "beam": 0.85,
-     "accent": true
-    }
-   ],
-   "ending": {
-    "type": "hadith",
-    "key": "bukhari-6464"
-   }
-  },
-  {
-   "id": "two-blessings",
-   "hook": "Two blessings we forget to thank. 🤍",
-   "scenes": [
-    {
-     "text": "Health.",
-     "pose": "walk",
-     "x": [
-      0.2,
-      0.4
-     ],
-     "beam": 0.5
-    },
-    {
-     "text": "Free time.",
-     "pose": "walk",
-     "x": [
-      0.4,
-      0.55
-     ],
-     "beam": 0.5
-    },
-    {
-     "text": "He had both.",
-     "pose": "stand",
-     "x": [
-      0.55,
-      0.55
-     ],
-     "beam": 0.5
-    },
-    {
-     "text": "And never noticed.",
-     "pose": "slump",
-     "x": [
-      0.55,
-      0.55
-     ],
-     "beam": 0.1
-    },
-    {
-     "text": "Today, he did.",
-     "pose": "open",
-     "x": [
-      0.55,
-      0.55
-     ],
-     "beam": 0.8,
-     "accent": true
-    }
-   ],
-   "ending": {
-    "type": "hadith",
-    "key": "bukhari-6412"
-   }
-  },
-  {
-   "id": "be-merciful",
-   "hook": "Mercy comes back to you. 🤍",
-   "scenes": [
-    {
-     "text": "He was always in a hurry.",
-     "pose": "walk",
-     "x": [
-      0.3,
-      0.42
-     ],
-     "beam": 0.3
-    },
-    {
-     "text": "A child dropped everything on the road.",
-     "pose": "stand",
-     "x": [
-      0.42,
-      0.42
-     ],
-     "beam": 0.25
-    },
-    {
-     "text": "He stopped.",
-     "pose": "stand",
-     "x": [
-      0.42,
-      0.42
-     ],
-     "beam": 0.4
-    },
-    {
-     "text": "And helped him pick it all up.",
-     "pose": "open",
-     "x": [
-      0.42,
-      0.42
-     ],
-     "beam": 0.85,
-     "accent": true
-    }
-   ],
-   "ending": {
-    "type": "hadith",
-    "key": "bukhari-6013"
-   }
-  },
-  {
-   "id": "wish-for-him",
-   "hook": "Be happy for your brother. 🤍",
-   "scenes": [
-    {
-     "text": "His friend got what he had prayed for.",
-     "pose": "stand",
-     "x": [
-      0.3,
-      0.3
-     ],
-     "beam": 0.3
-    },
-    {
-     "text": "A quiet voice whispered: envy.",
-     "pose": "slump",
-     "x": [
-      0.3,
-      0.3
-     ],
-     "beam": 0.08
-    },
-    {
-     "text": "He felt it. And let it pass.",
-     "pose": "stand",
-     "x": [
-      0.3,
-      0.3
-     ],
-     "beam": 0.4
-    },
-    {
-     "text": "Then he smiled and said: mashaAllah.",
-     "pose": "open",
-     "x": [
-      0.3,
-      0.3
-     ],
-     "beam": 0.85,
-     "accent": true
-    }
-   ],
-   "ending": {
-    "type": "hadith",
-    "key": "bukhari-13"
-   }
-  },
-  {
-   "id": "the-neighbour",
-   "hook": "Start with the one next door. 🤍",
-   "scenes": [
-    {
-     "text": "He never knew his neighbour's name.",
-     "pose": "walk",
-     "x": [
-      0.3,
-      0.42
-     ],
-     "beam": 0.25
-    },
-    {
-     "text": "One evening he knocked on the door.",
-     "pose": "stand",
-     "x": [
-      0.42,
-      0.42
-     ],
-     "beam": 0.3
-    },
-    {
-     "text": "With a small plate of food.",
-     "pose": "walk",
-     "x": [
-      0.42,
-      0.54
-     ],
-     "beam": 0.55
-    },
-    {
-     "text": "A stranger became a friend.",
-     "pose": "open",
-     "x": [
-      0.54,
-      0.54
-     ],
-     "beam": 0.85,
-     "accent": true
+     "focus": 0.5
     }
    ],
    "ending": {
@@ -693,233 +153,528 @@
    }
   },
   {
-   "id": "the-orphan",
-   "hook": "Be gentle with the one who has no one. 🤍",
+   "id": "honk",
+   "theme": "maroon",
+   "backdrop": "city",
+   "hook": "Seventeen seconds",
    "scenes": [
     {
-     "text": "A child sat alone.",
-     "pose": "slump",
-     "x": [
-      0.3,
-      0.3
+     "text": "The signal turned green. The car ahead did not move.",
+     "cast": [
+      {
+       "who": "man",
+       "x": 0.25,
+       "pose": "stand"
+      }
      ],
-     "beam": 0.08
+     "props": [
+      {
+       "k": "clock",
+       "x": 0.8,
+       "s": 1.0,
+       "y": 0.3
+      }
+     ],
+     "hl": [
+      "green"
+     ],
+     "focus": 0.4
     },
     {
-     "text": "Nobody had asked about him all day.",
-     "pose": "slump",
-     "x": [
-      0.3,
-      0.3
+     "text": "Honk. Honk. Honk. Hamza's chest was burning.",
+     "cast": [
+      {
+       "who": "man",
+       "x": 0.3,
+       "pose": "slump"
+      }
      ],
-     "beam": 0.06
+     "props": [
+      {
+       "k": "bubble",
+       "x": 0.3,
+       "s": 1.0,
+       "y": 0.55,
+       "text": "HONK!"
+      }
+     ],
+     "hl": [
+      "burning"
+     ],
+     "focus": 0.3
     },
     {
-     "text": "Someone sat beside him.",
-     "pose": "stand",
-     "x": [
-      0.3,
-      0.3
+     "text": "Then he saw her: a mother, hands shaking, a crying child in the back.",
+     "cast": [
+      {
+       "who": "woman",
+       "x": 0.65,
+       "pose": "stand",
+       "role": "other"
+      },
+      {
+       "who": "child",
+       "x": 0.8,
+       "pose": "sit",
+       "role": "other"
+      }
      ],
-     "beam": 0.4
+     "props": [
+      {
+       "k": "tears",
+       "x": 0.8,
+       "s": 1.0,
+       "y": 0.62
+      }
+     ],
+     "hl": [
+      "shaking"
+     ],
+     "focus": 0.7
     },
     {
-     "text": "And asked: how are you?",
-     "pose": "open",
-     "x": [
-      0.3,
-      0.3
+     "text": "He let go of the horn. And let go of something heavier, too.",
+     "cast": [
+      {
+       "who": "man",
+       "x": 0.4,
+       "pose": "open"
+      }
      ],
-     "beam": 0.85,
-     "accent": true
+     "props": [
+      {
+       "k": "sparkles",
+       "x": 0.4,
+       "s": 1.0
+      }
+     ],
+     "hl": [
+      "let go"
+     ],
+     "focus": 0.4
+    },
+    {
+     "text": "She waved a small thank-you. Seventeen seconds. That was all it cost.",
+     "cast": [
+      {
+       "who": "woman",
+       "x": 0.62,
+       "pose": "stand",
+       "role": "other",
+       "face": -1
+      },
+      {
+       "who": "man",
+       "x": 0.3,
+       "pose": "stand"
+      }
+     ],
+     "props": [
+      {
+       "k": "heart",
+       "x": 0.5,
+       "s": 0.8,
+       "y": 0.45
+      }
+     ],
+     "hl": [
+      "thank-you"
+     ],
+     "focus": 0.5
     }
    ],
    "ending": {
     "type": "hadith",
-    "key": "bukhari-6005"
+    "key": "bukhari-6114"
    }
   },
   {
-   "id": "the-seed",
-   "hook": "A small seed. A long reward. 🤍",
+   "id": "enough",
+   "theme": "plum",
+   "backdrop": "city",
+   "hook": "The biggest house on the street",
    "scenes": [
     {
-     "text": "He planted a small seed.",
-     "pose": "stand",
-     "x": [
-      0.3,
-      0.3
+     "text": "Idris had the biggest house on the street. And the quietest dinner table.",
+     "cast": [
+      {
+       "who": "man",
+       "x": 0.35,
+       "pose": "slump"
+      }
      ],
-     "beam": 0.3
+     "props": [
+      {
+       "k": "mansion",
+       "x": 0.7,
+       "s": 1.0
+      }
+     ],
+     "hl": [
+      "quietest"
+     ],
+     "focus": 0.5
     },
     {
-     "text": "Years passed. He forgot about it.",
-     "pose": "walk",
-     "x": [
-      0.3,
-      0.42
+     "text": "Always one more deal. One more upgrade. One more thing to chase.",
+     "cast": [
+      {
+       "who": "man",
+       "x": 0.3,
+       "pose": "walk",
+       "move": [
+        0.2,
+        0.45
+       ]
+      }
      ],
-     "beam": 0.2
+     "props": [
+      {
+       "k": "coins",
+       "x": 0.75,
+       "s": 1.0
+      }
+     ],
+     "hl": [
+      "more"
+     ],
+     "focus": 0.4
     },
     {
-     "text": "Birds rested in its shade.",
-     "pose": "stand",
-     "x": [
-      0.42,
-      0.42
+     "text": "Across the road, Mr. Karim ate rice and dal with his grandchildren.",
+     "cast": [
+      {
+       "who": "elder",
+       "x": 0.35,
+       "pose": "sit"
+      },
+      {
+       "who": "child",
+       "x": 0.55,
+       "pose": "sit",
+       "role": "other"
+      }
      ],
-     "beam": 0.5
+     "props": [
+      {
+       "k": "house",
+       "x": 0.8,
+       "s": 1.0
+      },
+      {
+       "k": "bowl",
+       "x": 0.45,
+       "s": 1.0
+      }
+     ],
+     "hl": [
+      "laughing"
+     ],
+     "focus": 0.5
     },
     {
-     "text": "He never knew who it fed.",
-     "pose": "open",
-     "x": [
-      0.42,
-      0.42
+     "text": "Idris stood by his gate and watched them laugh.",
+     "cast": [
+      {
+       "who": "man",
+       "x": 0.3,
+       "pose": "look",
+       "face": 1
+      }
      ],
-     "beam": 0.85,
-     "accent": true
+     "props": [
+      {
+       "k": "lamp",
+       "x": 0.7,
+       "s": 1.0,
+       "y": 0.66
+      }
+     ],
+     "hl": [
+      "laugh"
+     ],
+     "focus": 0.5
+    },
+    {
+     "text": "Some people own a lot. Some people have enough. They are not the same.",
+     "cast": [
+      {
+       "who": "man",
+       "x": 0.5,
+       "pose": "stand"
+      }
+     ],
+     "props": [
+      {
+       "k": "sun",
+       "x": 0.5,
+       "s": 1.0,
+       "y": 0.3
+      }
+     ],
+     "hl": [
+      "enough"
+     ],
+     "focus": 0.5
     }
    ],
    "ending": {
     "type": "hadith",
-    "key": "bukhari-6012"
+    "key": "bukhari-6446"
    }
   },
   {
-   "id": "kind-word",
-   "hook": "A kind word is charity too. 🤍",
+   "id": "scroll",
+   "theme": "emerald",
+   "backdrop": "none",
+   "hook": "Just five more minutes",
    "scenes": [
     {
-     "text": "He had no money to give.",
-     "pose": "slump",
-     "x": [
-      0.3,
-      0.3
+     "text": "After Isha, Bilal picked up his phone. Just five more minutes.",
+     "cast": [
+      {
+       "who": "man",
+       "x": 0.35,
+       "pose": "sit"
+      }
      ],
-     "beam": 0.08
+     "props": [
+      {
+       "k": "phone",
+       "x": 0.7,
+       "s": 1.2
+      }
+     ],
+     "hl": [
+      "five"
+     ],
+     "focus": 0.45
     },
     {
-     "text": "But he had a kind word.",
-     "pose": "stand",
-     "x": [
-      0.3,
-      0.3
+     "text": "The reels kept coming. The clock kept moving.",
+     "cast": [
+      {
+       "who": "man",
+       "x": 0.35,
+       "pose": "sit"
+      }
      ],
-     "beam": 0.35
+     "props": [
+      {
+       "k": "clock",
+       "x": 0.8,
+       "s": 1.0,
+       "y": 0.3
+      },
+      {
+       "k": "phone",
+       "x": 0.7,
+       "s": 1.2
+      }
+     ],
+     "hl": [
+      "clock"
+     ],
+     "focus": 0.4
     },
     {
-     "text": "And a good advice.",
-     "pose": "stand",
-     "x": [
-      0.3,
-      0.3
+     "text": "Behind him, his little girl held a storybook, waiting.",
+     "cast": [
+      {
+       "who": "man",
+       "x": 0.3,
+       "pose": "sit"
+      },
+      {
+       "who": "child",
+       "x": 0.7,
+       "pose": "stand",
+       "role": "other",
+       "face": -1
+      }
      ],
-     "beam": 0.5
+     "props": [
+      {
+       "k": "book",
+       "x": 0.8,
+       "s": 1.0
+      }
+     ],
+     "hl": [
+      "waiting"
+     ],
+     "focus": 0.6
     },
     {
-     "text": "That was charity too.",
-     "pose": "open",
-     "x": [
-      0.3,
-      0.3
+     "text": "It was midnight. She had fallen asleep with the book on her chest.",
+     "cast": [
+      {
+       "who": "child",
+       "x": 0.5,
+       "pose": "sit"
+      }
      ],
-     "beam": 0.85,
-     "accent": true
+     "props": [
+      {
+       "k": "book",
+       "x": 0.5,
+       "s": 0.9
+      }
+     ],
+     "hl": [
+      "midnight"
+     ],
+     "focus": 0.5
+    },
+    {
+     "text": "Some days we lose nothing but time. And time is the one thing we cannot buy back.",
+     "cast": [
+      {
+       "who": "man",
+       "x": 0.5,
+       "pose": "slump"
+      }
+     ],
+     "props": [
+      {
+       "k": "clock",
+       "x": 0.5,
+       "s": 1.2,
+       "y": 0.3
+      }
+     ],
+     "hl": [
+      "time"
+     ],
+     "focus": 0.5
     }
    ],
    "ending": {
     "type": "hadith",
-    "key": "bukhari-6021"
+    "key": "bukhari-6412"
    }
   },
   {
-   "id": "best-character",
-   "hook": "Character is part of faith. 🤍",
+   "id": "uff",
+   "theme": "gold",
+   "backdrop": "none",
+   "hook": "Ten years, one word he never said",
    "scenes": [
     {
-     "text": "He prayed. He fasted.",
-     "pose": "walk",
-     "x": [
-      0.3,
-      0.42
+     "text": "A glass slipped from a young servant's hand and shattered.",
+     "cast": [
+      {
+       "who": "child",
+       "x": 0.35,
+       "pose": "slump"
+      }
      ],
-     "beam": 0.4
+     "props": [
+      {
+       "k": "bubble",
+       "x": 0.3,
+       "s": 0.9,
+       "y": 0.5,
+       "text": "Oh no..."
+      }
+     ],
+     "hl": [
+      "shattered"
+     ],
+     "focus": 0.4
     },
     {
-     "text": "But he argued with everyone.",
-     "pose": "slump",
-     "x": [
-      0.42,
-      0.42
+     "text": "The room went silent. He waited for the shouting.",
+     "cast": [
+      {
+       "who": "child",
+       "x": 0.35,
+       "pose": "slump"
+      },
+      {
+       "who": "man",
+       "x": 0.7,
+       "pose": "stand",
+       "role": "other",
+       "face": -1
+      }
      ],
-     "beam": 0.08
+     "props": [],
+     "hl": [
+      "silent"
+     ],
+     "focus": 0.5
     },
     {
-     "text": "Then he asked himself: what about my character?",
-     "pose": "stand",
-     "x": [
-      0.42,
-      0.42
+     "text": "Instead, the man knelt down beside him.",
+     "cast": [
+      {
+       "who": "man",
+       "x": 0.5,
+       "pose": "sit",
+       "role": "other"
+      },
+      {
+       "who": "child",
+       "x": 0.35,
+       "pose": "stand"
+      }
      ],
-     "beam": 0.35
+     "props": [],
+     "hl": [
+      "knelt"
+     ],
+     "focus": 0.5
     },
     {
-     "text": "He started with a softer voice.",
-     "pose": "walk",
-     "x": [
-      0.42,
-      0.54
+     "text": "“Are you hurt? Don't worry about the glass.”",
+     "cast": [
+      {
+       "who": "man",
+       "x": 0.55,
+       "pose": "stand",
+       "role": "other",
+       "face": -1
+      },
+      {
+       "who": "child",
+       "x": 0.38,
+       "pose": "stand"
+      }
      ],
-     "beam": 0.8,
-     "accent": true
-    }
-   ],
-   "ending": {
-    "type": "hadith",
-    "key": "bukhari-6029"
-   }
-  },
-  {
-   "id": "it-is-okay",
-   "hook": "Be easy on people. 🤍",
-   "scenes": [
-    {
-     "text": "She dropped the plate again.",
-     "pose": "stand",
-     "x": [
-      0.3,
-      0.3
+     "props": [
+      {
+       "k": "heart",
+       "x": 0.45,
+       "s": 0.8,
+       "y": 0.45
+      }
      ],
-     "beam": 0.2
+     "hl": [
+      "hurt"
+     ],
+     "focus": 0.5
     },
     {
-     "text": "He was tired. He felt the words rising.",
-     "pose": "stand",
-     "x": [
-      0.3,
-      0.3
+     "text": "Years later, the boy still remembered the glass. But he remembered the kindness more.",
+     "cast": [
+      {
+       "who": "elder",
+       "x": 0.5,
+       "pose": "stand"
+      }
      ],
-     "beam": 0.12
-    },
-    {
-     "text": "He took a breath.",
-     "pose": "open",
-     "x": [
-      0.3,
-      0.3
+     "props": [
+      {
+       "k": "sparkles",
+       "x": 0.5,
+       "s": 1.0
+      }
      ],
-     "beam": 0.5
-    },
-    {
-     "text": "And said: it is okay.",
-     "pose": "stand",
-     "x": [
-      0.3,
-      0.3
+     "hl": [
+      "kindness"
      ],
-     "beam": 0.85,
-     "accent": true
+     "focus": 0.5
     }
    ],
    "ending": {
@@ -928,36 +683,570 @@
    }
   },
   {
-   "id": "make-it-easy",
-   "hook": "Make it easy. Not harder. 🤍",
+   "id": "lunchbox",
+   "theme": "emerald",
+   "backdrop": "village",
+   "hook": "Half a sandwich",
    "scenes": [
     {
-     "text": "People came to him with their problems.",
-     "pose": "stand",
-     "x": [
-      0.3,
-      0.3
+     "text": "At recess, Sara noticed a boy sitting alone with no lunch.",
+     "cast": [
+      {
+       "who": "child",
+       "x": 0.3,
+       "pose": "stand"
+      },
+      {
+       "who": "child",
+       "x": 0.75,
+       "pose": "slump",
+       "role": "other",
+       "face": -1
+      }
      ],
-     "beam": 0.3
+     "props": [
+      {
+       "k": "tree",
+       "x": 0.9,
+       "s": 0.7
+      }
+     ],
+     "hl": [
+      "alone"
+     ],
+     "focus": 0.5
     },
     {
-     "text": "He could have made it hard.",
-     "pose": "slump",
-     "x": [
-      0.3,
-      0.3
+     "text": "Her mother had packed too much. She hesitated. Then she walked over.",
+     "cast": [
+      {
+       "who": "child",
+       "x": 0.3,
+       "pose": "walk",
+       "move": [
+        0.3,
+        0.6
+       ]
+      }
      ],
-     "beam": 0.1
+     "props": [
+      {
+       "k": "plate",
+       "x": 0.28,
+       "s": 0.8
+      }
+     ],
+     "hl": [
+      "hesitated"
+     ],
+     "focus": 0.45
     },
     {
-     "text": "He chose to make it easy.",
-     "pose": "open",
-     "x": [
-      0.3,
-      0.3
+     "text": "“Want some?” Just two small words.",
+     "cast": [
+      {
+       "who": "child",
+       "x": 0.4,
+       "pose": "give"
+      },
+      {
+       "who": "child",
+       "x": 0.62,
+       "pose": "stand",
+       "role": "other",
+       "face": -1
+      }
      ],
-     "beam": 0.85,
-     "accent": true
+     "props": [
+      {
+       "k": "bubble",
+       "x": 0.5,
+       "s": 0.9,
+       "y": 0.5,
+       "text": "Want some?"
+      },
+      {
+       "k": "plate",
+       "x": 0.5,
+       "s": 0.8
+      }
+     ],
+     "hl": [
+      "Want"
+     ],
+     "focus": 0.5
+    },
+    {
+     "text": "He smiled for the first time that week.",
+     "cast": [
+      {
+       "who": "child",
+       "x": 0.4,
+       "pose": "stand"
+      },
+      {
+       "who": "child",
+       "x": 0.62,
+       "pose": "stand",
+       "role": "other",
+       "face": -1
+      }
+     ],
+     "props": [
+      {
+       "k": "sparkles",
+       "x": 0.5,
+       "s": 1.0
+      }
+     ],
+     "hl": [
+      "smiled"
+     ],
+     "focus": 0.5
+    },
+    {
+     "text": "The bell rang. Two kids walked in together.",
+     "cast": [
+      {
+       "who": "child",
+       "x": 0.35,
+       "pose": "walk",
+       "move": [
+        0.3,
+        0.7
+       ]
+      },
+      {
+       "who": "child",
+       "x": 0.5,
+       "pose": "walk",
+       "move": [
+        0.45,
+        0.85
+       ],
+       "role": "other"
+      }
+     ],
+     "props": [
+      {
+       "k": "house",
+       "x": 0.9,
+       "s": 0.8
+      }
+     ],
+     "hl": [
+      "together"
+     ],
+     "focus": 0.5
+    }
+   ],
+   "ending": {
+    "type": "hadith",
+    "key": "bukhari-13"
+   }
+  },
+  {
+   "id": "orphan",
+   "theme": "dawn",
+   "backdrop": "village",
+   "hook": "The boy at the back of the masjid",
+   "scenes": [
+    {
+     "text": "After Fajr, Omar noticed a boy sitting alone near the shoes.",
+     "cast": [
+      {
+       "who": "child",
+       "x": 0.7,
+       "pose": "slump",
+       "face": -1
+      }
+     ],
+     "props": [
+      {
+       "k": "mosque",
+       "x": 0.25,
+       "s": 0.9
+      }
+     ],
+     "hl": [
+      "alone"
+     ],
+     "focus": 0.7
+    },
+    {
+     "text": "No father. A mother who worked two jobs. Worn-out shoes.",
+     "cast": [
+      {
+       "who": "child",
+       "x": 0.7,
+       "pose": "slump",
+       "face": -1
+      },
+      {
+       "who": "woman",
+       "x": 0.9,
+       "pose": "stand",
+       "role": "other",
+       "face": -1
+      }
+     ],
+     "props": [
+      {
+       "k": "mosque",
+       "x": 0.25,
+       "s": 0.9
+      }
+     ],
+     "hl": [
+      "worn-out"
+     ],
+     "focus": 0.7
+    },
+    {
+     "text": "Omar did not make a speech. He just asked, “Want to walk home together?”",
+     "cast": [
+      {
+       "who": "man",
+       "x": 0.4,
+       "pose": "walk",
+       "move": [
+        0.3,
+        0.55
+       ]
+      },
+      {
+       "who": "child",
+       "x": 0.65,
+       "pose": "stand",
+       "role": "other"
+      }
+     ],
+     "props": [
+      {
+       "k": "mosque",
+       "x": 0.15,
+       "s": 0.7
+      }
+     ],
+     "hl": [
+      "together"
+     ],
+     "focus": 0.5
+    },
+    {
+     "text": "The next week, a pair of new shoes was left at their door.",
+     "cast": [
+      {
+       "who": "man",
+       "x": 0.3,
+       "pose": "give"
+      }
+     ],
+     "props": [
+      {
+       "k": "door",
+       "x": 0.7,
+       "s": 0.8
+      },
+      {
+       "k": "gift",
+       "x": 0.55,
+       "s": 1.0
+      }
+     ],
+     "hl": [
+      "shoes"
+     ],
+     "focus": 0.5
+    },
+    {
+     "text": "Some people carry a whole community on a small gesture.",
+     "cast": [
+      {
+       "who": "man",
+       "x": 0.4,
+       "pose": "stand"
+      },
+      {
+       "who": "child",
+       "x": 0.6,
+       "pose": "stand",
+       "role": "other"
+      }
+     ],
+     "props": [
+      {
+       "k": "sun",
+       "x": 0.5,
+       "s": 1.0,
+       "y": 0.3
+      }
+     ],
+     "hl": [
+      "gesture"
+     ],
+     "focus": 0.5
+    }
+   ],
+   "ending": {
+    "type": "hadith",
+    "key": "bukhari-6005"
+   }
+  },
+  {
+   "id": "sprout",
+   "theme": "dawn",
+   "backdrop": "none",
+   "hook": "A little, every day",
+   "scenes": [
+    {
+     "text": "Maryam planted a tiny seed on a Monday.",
+     "cast": [
+      {
+       "who": "woman",
+       "x": 0.4,
+       "pose": "sit"
+      }
+     ],
+     "props": [
+      {
+       "k": "sprout",
+       "x": 0.6,
+       "s": 1.5
+      }
+     ],
+     "hl": [
+      "seed"
+     ],
+     "focus": 0.5
+    },
+    {
+     "text": "Tuesday, nothing. Wednesday, nothing. She watered it anyway.",
+     "cast": [
+      {
+       "who": "woman",
+       "x": 0.4,
+       "pose": "give"
+      }
+     ],
+     "props": [
+      {
+       "k": "sprout",
+       "x": 0.6,
+       "s": 1.5
+      }
+     ],
+     "hl": [
+      "anyway"
+     ],
+     "focus": 0.5
+    },
+    {
+     "text": "Weeks passed. A single green leaf appeared.",
+     "cast": [
+      {
+       "who": "woman",
+       "x": 0.4,
+       "pose": "stand"
+      }
+     ],
+     "props": [
+      {
+       "k": "sprout",
+       "x": 0.6,
+       "s": 2.2
+      }
+     ],
+     "hl": [
+      "green"
+     ],
+     "focus": 0.5
+    },
+    {
+     "text": "A few small drops each day. Never a flood on one day and a drought for the rest.",
+     "cast": [
+      {
+       "who": "woman",
+       "x": 0.35,
+       "pose": "give"
+      }
+     ],
+     "props": [
+      {
+       "k": "sprout",
+       "x": 0.65,
+       "s": 2.8
+      }
+     ],
+     "hl": [
+      "small"
+     ],
+     "focus": 0.5
+    },
+    {
+     "text": "One year later, the whole yard was shaded.",
+     "cast": [
+      {
+       "who": "woman",
+       "x": 0.3,
+       "pose": "stand"
+      }
+     ],
+     "props": [
+      {
+       "k": "tree",
+       "x": 0.7,
+       "s": 1.2
+      }
+     ],
+     "hl": [
+      "shaded"
+     ],
+     "focus": 0.5
+    }
+   ],
+   "ending": {
+    "type": "hadith",
+    "key": "bukhari-6462"
+   }
+  },
+  {
+   "id": "discount",
+   "theme": "emerald",
+   "backdrop": "street",
+   "hook": "The man who made it easy",
+   "scenes": [
+    {
+     "text": "Haji Saleem ran a small fruit stall near the bus stop.",
+     "cast": [
+      {
+       "who": "elder",
+       "x": 0.7,
+       "pose": "stand",
+       "face": -1
+      }
+     ],
+     "props": [
+      {
+       "k": "stall",
+       "x": 0.3,
+       "s": 1.0
+      }
+     ],
+     "hl": [
+      "small"
+     ],
+     "focus": 0.4
+    },
+    {
+     "text": "A woman counted her coins twice and looked at the mangoes.",
+     "cast": [
+      {
+       "who": "woman",
+       "x": 0.3,
+       "pose": "stand",
+       "role": "other"
+      }
+     ],
+     "props": [
+      {
+       "k": "coins",
+       "x": 0.15,
+       "s": 0.6
+      },
+      {
+       "k": "stall",
+       "x": 0.65,
+       "s": 1.0
+      }
+     ],
+     "hl": [
+      "coins"
+     ],
+     "focus": 0.35
+    },
+    {
+     "text": "“Take them. Pay me when you can.” No lecture. No pity.",
+     "cast": [
+      {
+       "who": "elder",
+       "x": 0.7,
+       "pose": "give",
+       "face": -1
+      },
+      {
+       "who": "woman",
+       "x": 0.35,
+       "pose": "stand",
+       "role": "other"
+      }
+     ],
+     "props": [
+      {
+       "k": "stall",
+       "x": 0.55,
+       "s": 0.9
+      },
+      {
+       "k": "bubble",
+       "x": 0.7,
+       "s": 0.8,
+       "y": 0.45,
+       "text": "Pay me later."
+      }
+     ],
+     "hl": [
+      "Pay"
+     ],
+     "focus": 0.5
+    },
+    {
+     "text": "She walked home lighter than she came.",
+     "cast": [
+      {
+       "who": "woman",
+       "x": 0.3,
+       "pose": "walk",
+       "move": [
+        0.3,
+        0.8
+       ],
+       "role": "other"
+      }
+     ],
+     "props": [
+      {
+       "k": "house",
+       "x": 0.9,
+       "s": 0.8
+      }
+     ],
+     "hl": [
+      "lighter"
+     ],
+     "focus": 0.5
+    },
+    {
+     "text": "She never forgot his name. Neither did the neighbourhood.",
+     "cast": [
+      {
+       "who": "elder",
+       "x": 0.5,
+       "pose": "stand",
+       "face": -1
+      }
+     ],
+     "props": [
+      {
+       "k": "sparkles",
+       "x": 0.5,
+       "s": 1.0
+      }
+     ],
+     "hl": [
+      "Perhaps"
+     ],
+     "focus": 0.5
     }
    ],
    "ending": {
@@ -966,616 +1255,322 @@
    }
   },
   {
-   "id": "with-those-you-love",
-   "hook": "You will be with those you love. 🤍",
+   "id": "smile",
+   "theme": "gold",
+   "backdrop": "street",
+   "hook": "The cheapest charity",
    "scenes": [
     {
-     "text": "He worried: I cannot do what the righteous do.",
-     "pose": "slump",
-     "x": [
-      0.3,
-      0.3
+     "text": "It had been a long Monday. Zaid had nothing in his wallet to give.",
+     "cast": [
+      {
+       "who": "man",
+       "x": 0.35,
+       "pose": "slump"
+      }
      ],
-     "beam": 0.08
+     "props": [
+      {
+       "k": "coins",
+       "x": 0.8,
+       "s": 0.7
+      }
+     ],
+     "hl": [
+      "nothing"
+     ],
+     "focus": 0.4
     },
     {
-     "text": "But he loved them.",
-     "pose": "stand",
-     "x": [
-      0.3,
-      0.3
+     "text": "At the corner, he smiled at the tired guard and said, “Salam, brother.”",
+     "cast": [
+      {
+       "who": "man",
+       "x": 0.35,
+       "pose": "stand"
+      },
+      {
+       "who": "man",
+       "x": 0.7,
+       "pose": "stand",
+       "role": "other",
+       "face": -1
+      }
      ],
-     "beam": 0.45
+     "props": [
+      {
+       "k": "bubble",
+       "x": 0.5,
+       "s": 0.8,
+       "y": 0.5,
+       "text": "Salam!"
+      }
+     ],
+     "hl": [
+      "Salam"
+     ],
+     "focus": 0.5
     },
     {
-     "text": "And that love was not wasted.",
-     "pose": "open",
-     "x": [
-      0.3,
-      0.3
+     "text": "The guard stood a little straighter. He answered with his whole face.",
+     "cast": [
+      {
+       "who": "man",
+       "x": 0.7,
+       "pose": "open",
+       "role": "other",
+       "face": -1
+      }
      ],
-     "beam": 0.85,
-     "accent": true
+     "props": [
+      {
+       "k": "sparkles",
+       "x": 0.7,
+       "s": 1.0
+      }
+     ],
+     "hl": [
+      "whole face"
+     ],
+     "focus": 0.7
+    },
+    {
+     "text": "A greeting. A door held open. A kind word. None of it costs a coin.",
+     "cast": [
+      {
+       "who": "man",
+       "x": 0.3,
+       "pose": "stand"
+      }
+     ],
+     "props": [
+      {
+       "k": "door",
+       "x": 0.8,
+       "s": 0.8
+      }
+     ],
+     "hl": [
+      "kind"
+     ],
+     "focus": 0.5
     }
    ],
    "ending": {
     "type": "hadith",
-    "key": "bukhari-6168"
+    "key": "bukhari-6021"
    }
   },
   {
-   "id": "guard-the-tongue",
-   "hook": "Silence can be a gift. 🤍",
+   "id": "mercy",
+   "theme": "plum",
+   "backdrop": "street",
+   "hook": "Two heavy bags",
    "scenes": [
     {
-     "text": "He was about to say something hurtful.",
-     "pose": "stand",
-     "x": [
-      0.3,
-      0.3
+     "text": "An old woman stood at the bus stop with two heavy bags.",
+     "cast": [
+      {
+       "who": "woman",
+       "x": 0.65,
+       "pose": "slump",
+       "role": "other",
+       "face": -1
+      }
      ],
-     "beam": 0.2
+     "props": [
+      {
+       "k": "gift",
+       "x": 0.8,
+       "s": 1.0
+      }
+     ],
+     "hl": [
+      "heavy"
+     ],
+     "focus": 0.65
     },
     {
-     "text": "The words were ready.",
-     "pose": "stand",
-     "x": [
-      0.3,
-      0.3
+     "text": "People walked past. Some looked. Nobody stopped.",
+     "cast": [
+      {
+       "who": "man",
+       "x": 0.2,
+       "pose": "walk",
+       "move": [
+        0.1,
+        0.4
+       ]
+      }
      ],
-     "beam": 0.12
+     "props": [],
+     "hl": [
+      "Nobody"
+     ],
+     "focus": 0.4
     },
     {
-     "text": "He closed his mouth.",
-     "pose": "stand",
-     "x": [
-      0.3,
-      0.3
+     "text": "A teenager took off one earphone. “Which way, aunty?”",
+     "cast": [
+      {
+       "who": "child",
+       "x": 0.3,
+       "pose": "walk",
+       "move": [
+        0.2,
+        0.5
+       ]
+      },
+      {
+       "who": "woman",
+       "x": 0.7,
+       "pose": "stand",
+       "role": "other",
+       "face": -1
+      }
      ],
-     "beam": 0.5
+     "props": [
+      {
+       "k": "bubble",
+       "x": 0.35,
+       "s": 0.8,
+       "y": 0.45,
+       "text": "Which way?"
+      }
+     ],
+     "hl": [
+      "aunty"
+     ],
+     "focus": 0.5
     },
     {
-     "text": "And the moment passed.",
-     "pose": "open",
-     "x": [
-      0.3,
-      0.3
+     "text": "He carried both bags up the hill. Not a big thing. A big thing to her.",
+     "cast": [
+      {
+       "who": "child",
+       "x": 0.35,
+       "pose": "walk",
+       "move": [
+        0.3,
+        0.75
+       ]
+      },
+      {
+       "who": "woman",
+       "x": 0.55,
+       "pose": "walk",
+       "move": [
+        0.5,
+        0.9
+       ],
+       "role": "other"
+      }
      ],
-     "beam": 0.85,
-     "accent": true
+     "props": [],
+     "hl": [
+      "both"
+     ],
+     "focus": 0.5
     }
    ],
    "ending": {
     "type": "hadith",
-    "key": "bukhari-6474"
+    "key": "bukhari-6013"
    }
   },
   {
-   "id": "do-not-be-angry",
-   "hook": "Short advice. Long peace. 🤍",
+   "id": "thirst",
+   "theme": "dawn",
+   "backdrop": "dunes",
+   "hook": "A dog, a shoe and a well",
    "scenes": [
     {
-     "text": "A man asked for advice.",
-     "pose": "stand",
-     "x": [
-      0.3,
-      0.3
+     "text": "A traveller walked through the heat. His throat was dry.",
+     "cast": [
+      {
+       "who": "man",
+       "x": 0.3,
+       "pose": "walk",
+       "move": [
+        0.15,
+        0.5
+       ]
+      }
      ],
-     "beam": 0.3
+     "props": [
+      {
+       "k": "sun",
+       "x": 0.75,
+       "s": 1.2,
+       "y": 0.25
+      }
+     ],
+     "hl": [
+      "heat"
+     ],
+     "focus": 0.4
     },
     {
-     "text": "The answer was short.",
-     "pose": "stand",
-     "x": [
-      0.3,
-      0.3
+     "text": "He found a well and drank until he was himself again.",
+     "cast": [
+      {
+       "who": "man",
+       "x": 0.4,
+       "pose": "sit"
+      }
      ],
-     "beam": 0.45
+     "props": [],
+     "hl": [
+      "well"
+     ],
+     "focus": 0.5
     },
     {
-     "text": "He thought about it for years.",
-     "pose": "walk",
-     "x": [
-      0.3,
-      0.42
+     "text": "Then he saw a dog by the edge, licking the wet dust, trembling.",
+     "cast": [
+      {
+       "who": "man",
+       "x": 0.3,
+       "pose": "look"
+      }
      ],
-     "beam": 0.6
+     "props": [
+      {
+       "k": "dog",
+       "x": 0.7,
+       "s": 1.3
+      }
+     ],
+     "hl": [
+      "trembling"
+     ],
+     "focus": 0.7
     },
     {
-     "text": "And it changed him.",
-     "pose": "open",
-     "x": [
-      0.42,
-      0.42
+     "text": "He took off his leather sock, filled it, and carried it up in his teeth.",
+     "cast": [
+      {
+       "who": "man",
+       "x": 0.45,
+       "pose": "give"
+      }
      ],
-     "beam": 0.85,
-     "accent": true
+     "props": [
+      {
+       "k": "dog",
+       "x": 0.7,
+       "s": 1.3
+      }
+     ],
+     "hl": [
+      "filled"
+     ],
+     "focus": 0.5
     }
    ],
    "ending": {
     "type": "hadith",
-    "key": "bukhari-6116"
-   }
-  },
-  {
-   "id": "call-your-cousin",
-   "hook": "Mend the bond. 🤍",
-   "scenes": [
-    {
-     "text": "He had not spoken to his cousin in years.",
-     "pose": "walk",
-     "x": [
-      0.3,
-      0.42
-     ],
-     "beam": 0.2
-    },
-    {
-     "text": "Pride kept him away.",
-     "pose": "slump",
-     "x": [
-      0.42,
-      0.42
-     ],
-     "beam": 0.08
-    },
-    {
-     "text": "One day he picked up the phone.",
-     "pose": "stand",
-     "x": [
-      0.42,
-      0.42
-     ],
-     "beam": 0.45
-    },
-    {
-     "text": "And the silence ended.",
-     "pose": "open",
-     "x": [
-      0.42,
-      0.42
-     ],
-     "beam": 0.85,
-     "accent": true
-    }
-   ],
-   "ending": {
-    "type": "hadith",
-    "key": "bukhari-5984"
-   }
-  },
-  {
-   "id": "tears-in-the-night",
-   "hook": "Alone with Allah. 🤍",
-   "scenes": [
-    {
-     "text": "The house was quiet.",
-     "pose": "stand",
-     "x": [
-      0.3,
-      0.3
-     ],
-     "beam": 0.15
-    },
-    {
-     "text": "Everyone was asleep.",
-     "pose": "stand",
-     "x": [
-      0.3,
-      0.3
-     ],
-     "beam": 0.1
-    },
-    {
-     "text": "He remembered Allah.",
-     "pose": "stand",
-     "x": [
-      0.3,
-      0.3
-     ],
-     "beam": 0.5
-    },
-    {
-     "text": "And his eyes filled with tears.",
-     "pose": "open",
-     "x": [
-      0.3,
-      0.3
-     ],
-     "beam": 0.85,
-     "accent": true
-    }
-   ],
-   "ending": {
-    "type": "hadith",
-    "key": "bukhari-6479"
-   }
-  },
-  {
-   "id": "enough-is-allah",
-   "hook": "Do your part. Leave the rest to Him. 🤍",
-   "scenes": [
-    {
-     "text": "He had lost his job.",
-     "pose": "slump",
-     "x": [
-      0.3,
-      0.3
-     ],
-     "beam": 0.08
-    },
-    {
-     "text": "The bills kept coming.",
-     "pose": "slump",
-     "x": [
-      0.3,
-      0.3
-     ],
-     "beam": 0.06
-    },
-    {
-     "text": "He made his effort.",
-     "pose": "walk",
-     "x": [
-      0.3,
-      0.42
-     ],
-     "beam": 0.35
-    },
-    {
-     "text": "And left the rest to Allah.",
-     "pose": "open",
-     "x": [
-      0.42,
-      0.42
-     ],
-     "beam": 0.85,
-     "accent": true
-    }
-   ],
-   "ending": {
-    "type": "ayah",
-    "key": "65:3"
-   }
-  },
-  {
-   "id": "count-blessings",
-   "hook": "Count what you have. 🤍",
-   "scenes": [
-    {
-     "text": "He counted his problems.",
-     "pose": "slump",
-     "x": [
-      0.3,
-      0.3
-     ],
-     "beam": 0.08
-    },
-    {
-     "text": "Then he tried to count his blessings.",
-     "pose": "stand",
-     "x": [
-      0.3,
-      0.3
-     ],
-     "beam": 0.35
-    },
-    {
-     "text": "He could not finish.",
-     "pose": "open",
-     "x": [
-      0.3,
-      0.3
-     ],
-     "beam": 0.85,
-     "accent": true
-    }
-   ],
-   "ending": {
-    "type": "ayah",
-    "key": "14:7"
-   }
-  },
-  {
-   "id": "hearts-find-rest",
-   "hook": "Peace for a restless heart. 🤍",
-   "scenes": [
-    {
-     "text": "His mind was never quiet.",
-     "pose": "slump",
-     "x": [
-      0.3,
-      0.3
-     ],
-     "beam": 0.08
-    },
-    {
-     "text": "He whispered: SubhanAllah.",
-     "pose": "stand",
-     "x": [
-      0.3,
-      0.3
-     ],
-     "beam": 0.4
-    },
-    {
-     "text": "And his heart slowed down.",
-     "pose": "open",
-     "x": [
-      0.3,
-      0.3
-     ],
-     "beam": 0.85,
-     "accent": true
-    }
-   ],
-   "ending": {
-    "type": "ayah",
-    "key": "13:28"
-   }
-  },
-  {
-   "id": "never-despair",
-   "hook": "Never lose hope in Allah's mercy. 🤍",
-   "scenes": [
-    {
-     "text": "He had made so many mistakes.",
-     "pose": "slump",
-     "x": [
-      0.3,
-      0.3
-     ],
-     "beam": 0.06
-    },
-    {
-     "text": "He thought: I am finished.",
-     "pose": "slump",
-     "x": [
-      0.3,
-      0.3
-     ],
-     "beam": 0.05
-    },
-    {
-     "text": "But the door was still open.",
-     "pose": "stand",
-     "x": [
-      0.3,
-      0.3
-     ],
-     "beam": 0.4
-    },
-    {
-     "text": "He walked back in.",
-     "pose": "walk",
-     "x": [
-      0.3,
-      0.42
-     ],
-     "beam": 0.85,
-     "accent": true
-    }
-   ],
-   "ending": {
-    "type": "ayah",
-    "key": "12:87"
-   }
-  },
-  {
-   "id": "patience-and-prayer",
-   "hook": "When you cannot carry it alone. 🤍",
-   "scenes": [
-    {
-     "text": "He did not know how to bear it.",
-     "pose": "slump",
-     "x": [
-      0.3,
-      0.3
-     ],
-     "beam": 0.08
-    },
-    {
-     "text": "So he stood up to pray.",
-     "pose": "stand",
-     "x": [
-      0.3,
-      0.3
-     ],
-     "beam": 0.35
-    },
-    {
-     "text": "And found strength.",
-     "pose": "open",
-     "x": [
-      0.3,
-      0.3
-     ],
-     "beam": 0.85,
-     "accent": true
-    }
-   ],
-   "ending": {
-    "type": "ayah",
-    "key": "2:153"
-   }
-  },
-  {
-   "id": "keep-striving",
-   "hook": "Try again. 🤍",
-   "scenes": [
-    {
-     "text": "He tried to be better.",
-     "pose": "walk",
-     "x": [
-      0.3,
-      0.42
-     ],
-     "beam": 0.3
-    },
-    {
-     "text": "He fell.",
-     "pose": "slump",
-     "x": [
-      0.42,
-      0.42
-     ],
-     "beam": 0.08
-    },
-    {
-     "text": "He tried again.",
-     "pose": "stand",
-     "x": [
-      0.42,
-      0.42
-     ],
-     "beam": 0.4
-    },
-    {
-     "text": "And again.",
-     "pose": "walk",
-     "x": [
-      0.42,
-      0.54
-     ],
-     "beam": 0.85,
-     "accent": true
-    }
-   ],
-   "ending": {
-    "type": "ayah",
-    "key": "29:69"
-   }
-  },
-  {
-   "id": "not-forgotten",
-   "hook": "You are not forgotten. 🤍",
-   "scenes": [
-    {
-     "text": "He felt forgotten.",
-     "pose": "slump",
-     "x": [
-      0.3,
-      0.3
-     ],
-     "beam": 0.06
-    },
-    {
-     "text": "The night felt long.",
-     "pose": "slump",
-     "x": [
-      0.3,
-      0.3
-     ],
-     "beam": 0.05
-    },
-    {
-     "text": "Then, the first light of morning.",
-     "pose": "stand",
-     "x": [
-      0.3,
-      0.3
-     ],
-     "beam": 0.8,
-     "accent": true
-    }
-   ],
-   "ending": {
-    "type": "ayah",
-    "key": "93:3-5"
-   }
-  },
-  {
-   "id": "do-not-weaken",
-   "hook": "Do not weaken. Do not grieve. 🤍",
-   "scenes": [
-    {
-     "text": "He felt weak.",
-     "pose": "slump",
-     "x": [
-      0.3,
-      0.3
-     ],
-     "beam": 0.08
-    },
-    {
-     "text": "He felt sad.",
-     "pose": "slump",
-     "x": [
-      0.3,
-      0.3
-     ],
-     "beam": 0.06
-    },
-    {
-     "text": "But he stood up again.",
-     "pose": "stand",
-     "x": [
-      0.3,
-      0.3
-     ],
-     "beam": 0.5
-    },
-    {
-     "text": "Step by step.",
-     "pose": "walk",
-     "x": [
-      0.3,
-      0.42
-     ],
-     "beam": 0.85,
-     "accent": true
-    }
-   ],
-   "ending": {
-    "type": "ayah",
-    "key": "3:139"
-   }
-  },
-  {
-   "id": "why-we-are-here",
-   "hook": "Why are we here? 🤍",
-   "scenes": [
-    {
-     "text": "He asked: what is my purpose?",
-     "pose": "stand",
-     "x": [
-      0.3,
-      0.3
-     ],
-     "beam": 0.2
-    },
-    {
-     "text": "He searched for years.",
-     "pose": "walk",
-     "x": [
-      0.3,
-      0.42
-     ],
-     "beam": 0.3
-    },
-    {
-     "text": "Then he looked up.",
-     "pose": "stand",
-     "x": [
-      0.42,
-      0.42
-     ],
-     "beam": 0.6
-    },
-    {
-     "text": "And remembered.",
-     "pose": "open",
-     "x": [
-      0.42,
-      0.42
-     ],
-     "beam": 0.85,
-     "accent": true
-    }
-   ],
-   "ending": {
-    "type": "ayah",
-    "key": "51:56"
+    "key": "bukhari-173"
    }
   }
  ]

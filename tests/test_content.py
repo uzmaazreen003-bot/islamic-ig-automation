@@ -11,30 +11,30 @@ IST = content.IST
 def at(h, m=0, d=10):
     return datetime(2026, 11, d, h, m, tzinfo=IST)
 
-# 1) nothing due before the first slot, morning due after 06:30, noon after 13:00
-assert content.due_slot([], cfg, at(5, 0)) is None
-assert content.due_slot([], cfg, at(6, 31))["id"] == "morning"
-hist = [{"date": "2026-11-10", "slot": "morning", "status": "published", "kind": "ayah", "key": "94:5-6"}]
-assert content.due_slot(hist, cfg, at(7, 0)) is None
-assert content.due_slot(hist, cfg, at(13, 5))["id"] == "noon"
+# 1) nothing due before the first slot, story at 08:00, tasbih at 19:30
+assert content.due_slot([], cfg, at(7, 0)) is None
+assert content.due_slot([], cfg, at(8, 1))["id"] == "morning"
+hist = [{"date": "2026-11-10", "slot": "morning", "status": "published", "kind": "story", "key": "honk"}]
+assert content.due_slot(hist, cfg, at(9, 0)) is None
+assert content.due_slot(hist, cfg, at(19, 35))["id"] == "evening"
 # 2) a missed slot is made up later, but not more than 9 h late
-assert content.due_slot([], cfg, at(14, 0))["id"] == "morning"      # 7.5 h late, still allowed
-assert content.due_slot([], cfg, at(16, 0))["id"] == "noon"          # morning is 9.5 h late -> skipped
+assert content.due_slot([], cfg, at(13, 0))["id"] == "morning"       # 5 h late, still allowed
+assert content.due_slot([], cfg, at(18, 0)) is None            # morning is 10 h late -> skipped
 # 3) two failures in one day stop retries for that slot
 fails = [{"date": "2026-11-10", "slot": "morning", "status": "failed"}] * 2
-assert content.due_slot(fails, cfg, at(7, 0)) is None
+assert content.due_slot(fails, cfg, at(9, 0)) is None
 # 4) kinds rotate per slot, items never repeat until the pool is used up
 morning = cfg["slots"][0]
 seen_kinds, used, hist = [], set(), []
-for day in range(1, 31):
+for day in range(1, 1 + 2 * min(len(pools['story']), len(pools['quiz'])) - 2):
     kind = content.pick_kind(morning, hist)
     key = content.pick_key(kind, pools, hist, f"2026-11-{day:02d}")
-    assert key not in used, (day, key)
-    used.add(key); seen_kinds.append(kind)
+    assert (kind, key) not in used, (day, key)
+    used.add((kind, key)); seen_kinds.append(kind)
     hist.append({"date": f"2026-11-{day:02d}", "slot": "morning", "status": "published", "kind": kind, "key": key})
-assert set(seen_kinds) == {"story"}, seen_kinds
+assert set(seen_kinds) == {"story", "quiz"}, seen_kinds
 # 5) captions contain the source reference and no empty fields
-for kind in ("ayah", "dua", "hadith", "tasbih", "story"):
+for kind in ("ayah", "dua", "hadith", "tasbih", "story", "quiz", "checklist"):
     key = next(iter(pools[kind]))
     cap = content.caption(kind, pools[kind][key], cfg, pools["dhikr_lib"], pools)
     assert "#ruhcorner" in cap and "@ruh_corner" in cap, kind

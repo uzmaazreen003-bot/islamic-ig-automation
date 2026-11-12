@@ -24,7 +24,11 @@ def load_pools(data_dir):
     hadith = {k: h for k, h in hadith_all.items() if len(h["text"]) <= MAX_HADITH_CHARS}
     dhikr = rd("dhikr.json")
     stories = {s["id"]: s for s in rd("stories.json")["stories"]}
+    quizzes = {s["id"]: s for s in rd("quizzes.json")["quizzes"]}
+    checklists = {s["id"]: s for s in dhikr["checklists"]}
     return {
+        "quiz": quizzes,
+        "checklist": checklists,
         "ayah": {i["ref"]: i for i in quran if i["kind"] == "ayah"},
         "dua": {i["ref"]: i for i in quran if i["kind"] == "dua"},
         "hadith": hadith,
@@ -83,7 +87,7 @@ def pick_key(kind, pools, history, today, force_key=None):
 
 
 def default_format(kind):
-    return {"tasbih": "reel", "story": "reel", "hadith": "carousel"}.get(kind, "reel")
+    return {"tasbih": "reel", "story": "reel", "quiz": "reel", "checklist": "reel", "hadith": "carousel"}.get(kind, "reel")
 
 
 # ------------------------------------------------------------------ captions
@@ -109,6 +113,13 @@ def caption(kind, item, cfg, dhikr_lib=None, pools=None):
         body = f"{item['title']} 🤍\n\nCount along with the beads:\n" + "\n".join(f"{n}× {x}" for x in names)
         if item.get("source"):
             body += f"\n\nThe sunnah is 33 of each after every prayer: repeat this 3 times ({item['source']})."
+    elif kind == "checklist":
+        body = f"{item['title']} ✅\n\nSay each one slowly and tick along:\n" + "\n".join(f"✔ {pools['dhikr_lib'][k]['tr']} — {pools['dhikr_lib'][k]['en']}" for k in item["items"])
+    elif kind == "quiz":
+        from .story import ending_content
+        e = ending_content(item["ending"], pools)
+        quote = e["english"] if e["english"].startswith("“") else f"“{e['english']}”"
+        body = f"{item['scenario']} {item['ask']}\n\nA, B or C? Tell us below 👇\n\n{quote}\n— {e['ref']}"
     elif kind == "story":
         from .story import ending_content
         e = ending_content(item["ending"], pools)
