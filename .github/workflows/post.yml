@@ -2,12 +2,10 @@ name: Post to Instagram (Ruh Corner)
 
 on:
   schedule:
-    - cron: "0 1 * * *"     # 06:30 IST - morning story Reel
-    - cron: "0 3 * * *"     # 08:30 IST - backup (does nothing if the post already went out)
-    - cron: "30 7 * * *"    # 13:00 IST - tasbih Reel
-    - cron: "30 9 * * *"    # 15:00 IST - backup
-    - cron: "0 14 * * *"    # 19:30 IST - evening carousel
-    - cron: "0 16 * * *"    # 21:30 IST - backup
+    - cron: "30 2 * * *"     # 08:00 IST - story Reel
+    - cron: "30 4 * * *"     # 10:00 IST - backup (does nothing if already posted)
+    - cron: "0 14 * * *"     # 19:30 IST - tasbih Reel
+    - cron: "0 16 * * *"     # 21:30 IST - backup
   workflow_dispatch:
     inputs:
       dry_run:
@@ -17,7 +15,7 @@ on:
       kind:
         description: "What to make"
         type: choice
-        options: [auto, story, tasbih, hadith, ayah, dua]
+        options: [auto, story, quiz, checklist, tasbih, hadith, ayah, dua]
         default: auto
       format:
         description: "Format (story and tasbih are always Reels, hadith always a carousel)"
