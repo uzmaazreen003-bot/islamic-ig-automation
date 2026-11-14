@@ -7,7 +7,7 @@ import math
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 
-from . import audio, narrate, stage, textkit, theme
+from . import audio, narrate, polish, stage, textkit, theme
 from .tasbih import scale_alpha
 
 W, H, FPS = stage.W, stage.H, 30
@@ -265,7 +265,7 @@ def make_reel(topic, handle, out_path, seed=0, workdir=".", voice_on=True):
                 fade = min(1.0, tm / 0.6 + 0.001, (total - tm) / 1.0)
                 if fade < 1.0:
                     out = Image.blend(Image.new("RGB", (W, H), c["th"]["top"]), out, max(0.0, fade))
-                yield np.asarray(out)
+                yield polish.finish(out, tm, total, fi=fi)
 
         audio.encode_video(frames(), W, H, FPS, wav, out_path)
         return dict(total=round(total, 1), chapters=n, voice=any(c["c1"] is not None for c in chs))

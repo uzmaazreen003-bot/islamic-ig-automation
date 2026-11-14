@@ -7,7 +7,7 @@ import math
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 
-from . import audio, stage, textkit, theme
+from . import audio, polish, stage, textkit, theme
 from .tasbih import scale_alpha
 
 W, H, FPS = 720, 1280, 30
@@ -98,7 +98,7 @@ def _shatter(rng):
     return (n + chime).astype(np.float32)
 
 
-def make_reel(item, handle, out_path, seed=0, workdir=".", count=33, theme_name="emerald"):
+def make_reel(item, handle, out_path, seed=0, workdir=".", count=33, theme_name="emerald", cycle=2.0):
     th = BOULDER_THEMES[theme_name]
     rng = np.random.default_rng(seed)
     sprite, mask, S = _stone_sprite(th, rng)
@@ -126,10 +126,11 @@ def make_reel(item, handle, out_path, seed=0, workdir=".", count=33, theme_name=
     theme.spaced(ImageDraw.Draw(foot), (W / 2, 1196), "RUH CORNER", theme.poppins("medium", 18), th["accent"], spacing=6)
     ImageDraw.Draw(foot).text((W / 2, 1226), handle, font=theme.poppins("light", 16), fill=th["text"] + (120,), anchor="ma")
 
-    t0, t_end_hits = 1.5, 1.5 + count * CYCLE
-    t_split = t_end_hits - CYCLE + T_HIT + 0.35
+    f = cycle / CYCLE
+    t0, t_end_hits = 1.5, 1.5 + count * cycle
+    t_split = t_end_hits - cycle + T_HIT * f + 0.35
     total = t_split + 7.0
-    hits = [t0 + k * CYCLE + T_HIT for k in range(count)]
+    hits = [t0 + k * cycle + T_HIT * f for k in range(count)]
     events = [(h, _thud(rng)) for h in hits] + [(t_split, _shatter(rng)), (t_split + 0.2, audio.bowl(432, 4.0, 0.12))]
     wav = f"{workdir}/boulder-audio.wav"
     audio.mix(events, total, wav, seed=seed, extra=audio.pad(total, 98.0, 0.04))
@@ -162,6 +163,7 @@ def make_reel(item, handle, out_path, seed=0, workdir=".", count=33, theme_name=
         return ImageChops.darker(a, b)
 
     def phi_at(c):                                       # hammer angle (radians, 0 = horizontal forward)
+        c = c / f
         if c < 0.8:
             e = 0.5 - 0.5 * math.cos(math.pi * c / 0.8)
             return math.radians(-30 - 105 * e)
@@ -230,6 +232,7 @@ def make_reel(item, handle, out_path, seed=0, workdir=".", count=33, theme_name=
             last = max([h for h in hits if tm >= h], default=None)
             if last is not None and tm - last < 0.4:
                 shake = 7 * math.exp(-(tm - last) * 11) * math.sin((tm - last) * 55)
+            cam = (shake * 0.5, -abs(shake) * 0.4)
             glow_amt = min(1.0, (tm - t_split) / 1.0) * 0.8 if splitting else 0.0
             st = stone(done, glow_amt)
             if not splitting:
@@ -255,13 +258,13 @@ def make_reel(item, handle, out_path, seed=0, workdir=".", count=33, theme_name=
             if tm < t0:
                 phi, k = math.radians(-30), -1
             elif not splitting:
-                k = min(count - 1, int((tm - t0) // CYCLE))
-                phi = phi_at((tm - t0) - k * CYCLE)
+                k = min(count - 1, int((tm - t0) // cycle))
+                phi = phi_at((tm - t0) - k * cycle)
             else:
                 phi = math.radians(-30)
             figure(fr, phi, 0)
             # sparks at the last hit
-            if last is not None and not splitting and tm - last < 0.7:
+            if last is not None and not splitting and tm - last < 0.7 * min(1.0, f + 0.2):
                 kk = hits.index(last)
                 dd = ImageDraw.Draw(fr)
                 el = tm - last
@@ -269,6 +272,15 @@ def make_reel(item, handle, out_path, seed=0, workdir=".", count=33, theme_name=
                     x = CX - R * 0.97 + vx * 150 * el
                     y = CY + 6 + (vy * 190 * el + 330 * el * el)
                     dd.ellipse((x - rr, y - rr, x + rr, y + rr), fill=th["glow"] + (int(255 * (1 - el / 0.7)),))
+            if last is not None and tm - last < 0.9 and not splitting:
+                el = (tm - last) / 0.9
+                pf = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+                pd = ImageDraw.Draw(pf)
+                for j in range(6):
+                    px = CX - R * 0.9 + (j - 2.5) * 34 * (1 + el) - 40 * el
+                    pr = 16 + 40 * el
+                    pd.ellipse((px - pr, GY - pr * 0.7 - 20 * el, px + pr, GY + pr * 0.3), fill=th["accent"] + (int(70 * (1 - el)),))
+                fr.alpha_composite(pf.filter(ImageFilter.GaussianBlur(8)))
             fr.alpha_composite(head)
             dd = ImageDraw.Draw(fr)
             shown = min(count, done)
@@ -281,7 +293,7 @@ def make_reel(item, handle, out_path, seed=0, workdir=".", count=33, theme_name=
             fade = min(1.0, tm / 0.8 + 0.001, (total - tm) / 1.0)
             if fade < 1.0:
                 out = Image.blend(Image.new("RGB", (W, H), th["top"]), out, max(0.0, fade))
-            yield np.asarray(out)
+            yield polish.finish(out, tm, total, shake=cam, fi=fi)
 
     audio.encode_video(frames(), W, H, FPS, wav, out_path)
     return dict(total=round(total, 1), count=count)

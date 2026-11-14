@@ -115,12 +115,12 @@ def cmd_plan(args):
     elif kind == "world":
         out = os.path.join(OUT, f"{stem}.mp4")
         with tempfile.TemporaryDirectory() as tmp:
-            info = world.make_reel(item, handle, out, seed=seed, workdir=tmp, count=cfg.get("boulder_count", 33))
+            info = world.make_reel(item, handle, out, seed=seed, workdir=tmp, count=cfg.get("boulder_count", 33), cycle=cfg.get("dhikr_seconds", 1.2))
         files = [out]
     elif kind == "boulder":
         out = os.path.join(OUT, f"{stem}.mp4")
         with tempfile.TemporaryDirectory() as tmp:
-            info = boulder.make_reel(item, handle, out, seed=seed, workdir=tmp, count=cfg.get("boulder_count", 33), theme_name=item["theme"])
+            info = boulder.make_reel(item, handle, out, seed=seed, workdir=tmp, count=cfg.get("boulder_count", 33), theme_name=item["theme"], cycle=cfg.get("dhikr_seconds", 1.2))
         files = [out]
     elif kind == "quiz":
         out = os.path.join(OUT, f"{stem}.mp4")

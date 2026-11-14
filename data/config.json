@@ -112,5 +112,6 @@
  "narrator_voice": "en-US-AndrewMultilingualNeural",
  "narrator_rate": "-10%",
  "narrator_pitch": "-2Hz",
- "boulder_count": 33
+ "boulder_count": 33,
+ "dhikr_seconds": 1.2
 }

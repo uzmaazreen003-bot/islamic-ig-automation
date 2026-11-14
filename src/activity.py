@@ -6,7 +6,7 @@ import math
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 
-from . import audio, narrate, stage, textkit, theme
+from . import audio, narrate, polish, stage, textkit, theme
 from .story import ending_content
 from .tasbih import scale_alpha
 
@@ -74,7 +74,7 @@ def _finish(fr, tm, total, th):
     fade = min(1.0, tm / 0.8 + 0.001, (total - tm) / 1.0)
     if fade < 1.0:
         out = Image.blend(Image.new("RGB", (W, H), th["top"]), out, max(0.0, fade))
-    return np.asarray(out)
+    return polish.finish(out, tm, total)
 
 
 # ------------------------------------------------------------------ quiz
