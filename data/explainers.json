@@ -1,0 +1,164 @@
+{
+ "topics": [
+  {
+   "id": "rizq",
+   "theme": "gold",
+   "title": "Rizq, explained slowly",
+   "hook": "Rizq is not just money",
+   "chapters": [
+    {
+     "label": "Rizq",
+     "heading": "Rizq, explained slowly",
+     "line": "Let us talk about rizq.",
+     "icon": "intro",
+     "tint": "gold",
+     "quote": null
+    },
+    {
+     "label": "What it is",
+     "heading": "Rizq is not just money",
+     "line": "Health. Family. Peace of mind. Even your next breath.",
+     "icon": "four",
+     "tint": "rose",
+     "quote": null
+    },
+    {
+     "label": "A promise",
+     "heading": "Every creature is provided for",
+     "line": "Not one is left out.",
+     "icon": "creature",
+     "tint": "jade",
+     "quote": {
+      "ref": "Quran 11:6",
+      "english": "And there is no creature on earth but that upon Allah is its provision, and He knows its place of dwelling and place of storage. All is in a clear register.",
+      "arabic": "۞ وَمَا مِن دَاۤبَّةࣲ فِي ٱلۡأَرۡضِ إِلَّا عَلَى ٱللَّهِ رِزۡقُهَا وَيَعۡلَمُ مُسۡتَقَرَّهَا وَمُسۡتَوۡدَعَهَاۚ كُلࣱّ فِي كِتَـٰبࣲ مُّبِينࣲ"
+     }
+    },
+    {
+     "label": "Key one",
+     "heading": "Ask forgiveness",
+     "line": "The first key. Turn back, and ask.",
+     "icon": "rain",
+     "tint": "violet",
+     "quote": {
+      "ref": "Quran 71:10-11",
+      "english": "And said, 'Ask forgiveness of your Lord. Indeed, He is ever a Perpetual Forgiver. He will send [rain from] the sky upon you in [continuing] showers.",
+      "arabic": "فَقُلۡتُ ٱسۡتَغۡفِرُوا۟ رَبَّكُمۡ إِنَّهُۥ كَانَ غَفَّارࣰا يُرۡسِلِ ٱلسَّمَاۤءَ عَلَيۡكُم مِّدۡرَارࣰا"
+     }
+    },
+    {
+     "label": "Key two",
+     "heading": "Be grateful",
+     "line": "The second key. Say thank you, and mean it.",
+     "icon": "lamp",
+     "tint": "gold",
+     "quote": {
+      "ref": "Quran 14:7",
+      "english": "And [remember] when your Lord proclaimed, 'If you are grateful, I will surely increase you [in favor]; but if you deny, indeed, My punishment is severe.",
+      "arabic": "وَإِذۡ تَأَذَّنَ رَبُّكُمۡ لَئِن شَكَرۡتُمۡ لَأَزِيدَنَّكُمۡۖ وَلَئِن كَفَرۡتُمۡ إِنَّ عَذَابِي لَشَدِيدࣱ"
+     }
+    },
+    {
+     "label": "Key three",
+     "heading": "Stay mindful",
+     "line": "The third key. Stay mindful of Him.",
+     "icon": "door",
+     "tint": "jade",
+     "quote": {
+      "ref": "Quran 65:2-3",
+      "english": "And whoever fears Allah - He will make for him a way out. And will provide for him from where he does not expect.",
+      "arabic": ""
+     }
+    },
+    {
+     "label": "Remember",
+     "heading": "Do your part",
+     "line": "Do your part. Then let your heart rest.",
+     "icon": "walk",
+     "tint": "amber",
+     "quote": null
+    }
+   ]
+  },
+  {
+   "id": "sabr",
+   "theme": "plum",
+   "title": "Sabr, explained slowly",
+   "hook": "What patience really means",
+   "chapters": [
+    {
+     "label": "Sabr",
+     "heading": "Sabr, explained slowly",
+     "line": "Everyone says, be patient. Few explain what it means.",
+     "icon": "intro_s",
+     "tint": "violet",
+     "quote": null
+    },
+    {
+     "label": "What it is",
+     "heading": "Not silence. Not giving up.",
+     "line": "It still hurts. Patience is staying steady anyway.",
+     "icon": "four_s",
+     "tint": "rose",
+     "quote": null
+    },
+    {
+     "label": "You are not alone",
+     "heading": "Help comes with patience",
+     "line": "While you wait, you are not waiting alone.",
+     "icon": "ties",
+     "tint": "gold",
+     "quote": {
+      "ref": "Quran 2:153",
+      "english": "O you who have believed, seek help through patience and prayer. Indeed, Allah is with the patient.",
+      "arabic": "يَـٰۤأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ ٱسۡتَعِينُوا۟ بِٱلصَّبۡرِ وَٱلصَّلَوٰةِۚ إِنَّ ٱللَّهَ مَعَ ٱلصَّـٰبِرِينَ"
+     }
+    },
+    {
+     "label": "A test",
+     "heading": "Tests are part of the road",
+     "line": "Hard days do not mean you were forgotten.",
+     "icon": "rain",
+     "tint": "jade",
+     "quote": {
+      "ref": "Quran 2:155",
+      "english": "And We will surely test you with something of fear and hunger and a loss of wealth and lives and fruits, but give good tidings to the patient.",
+      "arabic": "وَلَنَبۡلُوَنَّكُم بِشَيۡءࣲ مِّنَ ٱلۡخَوۡفِ وَٱلۡجُوعِ وَنَقۡصࣲ مِّنَ ٱلۡأَمۡوَ ٰلِ وَٱلۡأَنفُسِ وَٱلثَّمَرَ ٰتِۗ وَبَشِّرِ ٱلصَّـٰبِرِينَ"
+     }
+    },
+    {
+     "label": "The first moment",
+     "heading": "Real patience is early",
+     "line": "The first moment is where it counts.",
+     "icon": "walk",
+     "tint": "amber",
+     "quote": {
+      "ref": "Sahih al-Bukhari 1302",
+      "english": "“The real patience is at the first stroke of a calamity”",
+      "arabic": ""
+     }
+    },
+    {
+     "label": "Ease",
+     "heading": "Ease is promised",
+     "line": "And after the hardship, listen.",
+     "icon": "beam",
+     "tint": "gold",
+     "quote": {
+      "ref": "Quran 94:5-6",
+      "english": "For indeed, with hardship [will be] ease. Indeed, with hardship [will be] ease.",
+      "arabic": "فَإِنَّ مَعَ ٱلۡعُسۡرِ يُسۡرًا إِنَّ مَعَ ٱلۡعُسۡرِ يُسۡرࣰا"
+     }
+    },
+    {
+     "label": "Remember",
+     "heading": "Keep walking",
+     "line": "Take the next small step.",
+     "icon": "walk",
+     "tint": "violet",
+     "quote": null
+    }
+   ]
+  }
+ ]
+}

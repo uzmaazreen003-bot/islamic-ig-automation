@@ -15,7 +15,7 @@ on:
       kind:
         description: "What to make"
         type: choice
-        options: [auto, story, quiz, checklist, tasbih, hadith, ayah, dua]
+        options: [auto, story, quiz, checklist, explainer, boulder, world, tasbih, hadith, ayah, dua]
         default: auto
       format:
         description: "Format (story and tasbih are always Reels, hadith always a carousel)"

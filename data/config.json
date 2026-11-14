@@ -10,6 +10,7 @@
    "format": "reel",
    "kinds": [
     "story",
+    "explainer",
     "quiz"
    ]
   },
@@ -18,7 +19,9 @@
    "time": "19:30",
    "format": "reel",
    "kinds": [
+    "boulder",
     "tasbih",
+    "world",
     "checklist"
    ]
   }
@@ -78,9 +81,36 @@
    "#subhanallah",
    "#alhamdulillah",
    "#allahuakbar"
+  ],
+  "explainer": [
+   "#islamicstories",
+   "#islamicreminder",
+   "#reminder",
+   "#faith",
+   "#iman"
+  ],
+  "boulder": [
+   "#tasbih",
+   "#dhikr",
+   "#zikr",
+   "#subhanallah",
+   "#alhamdulillah",
+   "#allahuakbar"
+  ],
+  "world": [
+   "#tasbih",
+   "#dhikr",
+   "#zikr",
+   "#subhanallah",
+   "#alhamdulillah",
+   "#allahuakbar"
   ]
  },
  "max_hashtags": 11,
  "dhikr_voice": "files",
- "story_voice": true
+ "story_voice": true,
+ "narrator_voice": "en-US-AndrewMultilingualNeural",
+ "narrator_rate": "-10%",
+ "narrator_pitch": "-2Hz",
+ "boulder_count": 33
 }

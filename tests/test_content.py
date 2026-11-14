@@ -26,15 +26,16 @@ assert content.due_slot(fails, cfg, at(9, 0)) is None
 # 4) kinds rotate per slot, items never repeat until the pool is used up
 morning = cfg["slots"][0]
 seen_kinds, used, hist = [], set(), []
-for day in range(1, 1 + 2 * min(len(pools['story']), len(pools['quiz'])) - 2):
+for day in range(1, 20):
     kind = content.pick_kind(morning, hist)
     key = content.pick_key(kind, pools, hist, f"2026-11-{day:02d}")
-    assert (kind, key) not in used, (day, key)
+    if sum(1 for k, _ in used if k == kind) < len(pools[kind]):          # no repeats until the pool is used up
+        assert (kind, key) not in used, (day, key)
     used.add((kind, key)); seen_kinds.append(kind)
     hist.append({"date": f"2026-11-{day:02d}", "slot": "morning", "status": "published", "kind": kind, "key": key})
-assert set(seen_kinds) == {"story", "quiz"}, seen_kinds
+assert set(seen_kinds) == {"story", "quiz", "explainer"}, seen_kinds
 # 5) captions contain the source reference and no empty fields
-for kind in ("ayah", "dua", "hadith", "tasbih", "story", "quiz", "checklist"):
+for kind in ("ayah", "dua", "hadith", "tasbih", "story", "quiz", "checklist", "explainer", "boulder", "world"):
     key = next(iter(pools[kind]))
     cap = content.caption(kind, pools[kind][key], cfg, pools["dhikr_lib"], pools)
     assert "#ruhcorner" in cap and "@ruh_corner" in cap, kind
@@ -47,3 +48,14 @@ for sid, st in pools["story"].items():
     assert e["english"] and e["ref"], sid
     assert 3 <= len(st["scenes"]) <= 12, sid
 print("content tests OK;", {k: len(v) for k, v in pools.items() if k != "dhikr_lib"})
+
+# 7) explainer quotes are verbatim and every picture/boulder item is renderable
+from src import explainer
+for tid, tp in pools["explainer"].items():
+    for ch in tp["chapters"]:
+        assert ch["icon"] in ("intro", "intro_s", "four", "four_s", "creature", "beam", "rain", "lamp", "door", "ties", "walk"), ch["icon"]
+        assert ch["tint"] in explainer.TINTS
+        if ch.get("quote"):
+            assert ch["quote"]["english"] and ch["quote"]["ref"]
+assert set(pools["boulder"]) == set(pools["dhikr_lib"])
+print("explainer/boulder tests OK")

@@ -8,12 +8,12 @@ from __future__ import annotations
 import math
 
 import numpy as np
-from PIL import Image, ImageDraw, ImageFont, ImageOps
+from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 
 from . import theme
 
 W, H = 720, 1280
-GROUND = 905
+GROUND = 640
 
 THEMES = {
     "gold":    dict(top=(12, 10, 8),   bot=(34, 25, 13),  ground=(8, 7, 6),    fig=(246, 240, 228), other=(190, 180, 160), accent=(236, 190, 112), text=(246, 240, 228), glow=(255, 226, 160), prop=(214, 168, 92),  dark=False),
@@ -29,7 +29,7 @@ def lerp(a, b, t):
     return tuple(int(a[i] + (b[i] - a[i]) * t) for i in range(3))
 
 
-def backdrop(th, kind="none", seed=0, ground=True):
+def backdrop(th, kind="none", seed=0, ground=True, calm=False):
     """Sky gradient, optional far scenery silhouettes, and the ground."""
     img = theme.gradient(W, H, th["top"], th["bot"]).convert("RGBA")
     d = ImageDraw.Draw(img)
@@ -42,7 +42,7 @@ def backdrop(th, kind="none", seed=0, ground=True):
             d.rectangle((x, GROUND - h, x + w, GROUND), fill=sil + (255,))
             for wy in range(GROUND - h + 18, GROUND - 20, 34):
                 for wx in range(x + 10, x + w - 14, 22):
-                    if rng.random() < 0.28:
+                    if rng.random() < (0.12 if calm else 0.28):
                         d.rectangle((wx, wy, wx + 8, wy + 12), fill=th["glow"] + (170,))
             x += w + int(rng.integers(4, 18))
     elif kind == "dunes":
@@ -62,7 +62,7 @@ def backdrop(th, kind="none", seed=0, ground=True):
             d.rectangle((x + 40, GROUND - 45, x + 60, GROUND), fill=th["glow"] + (120,))
     # stars on dark themes
     if not th["dark"]:
-        for _ in range(60):
+        for _ in range(22 if calm else 60):
             sx, sy = int(rng.integers(10, W - 10)), int(rng.integers(20, (GROUND if ground else H) - 260))
             r = rng.uniform(0.6, 1.8)
             d.ellipse((sx - r, sy - r, sx + r, sy + r), fill=th["glow"] + (int(rng.integers(40, 150)),))
@@ -97,7 +97,7 @@ def person(kind, x, pose, t, th, who="main", face=1, scale=1.0):
     head_r = (15 if kind != "child" else 19) * sc / (k / 1.0 / (k if kind != "child" else k)) if False else (15 * sc if kind != "child" else 15 * sc * 1.5 / 1.0 * 0.62 / 0.56)
     head_dir = lean + (0.2 if pose == "slump" else 0.0) + (-0.2 if pose == "look" else 0.0)
     head = (neck[0] + math.sin(head_dir) * (head_r + 3 * sc), neck[1] - math.cos(head_dir) * (head_r + 3 * sc))
-    w = max(3, int(3.4 * sc / 1.0 * 0.5))
+    w = int(th.get("limb", 0) * S * (0.72 if kind == "child" else 1.0)) or max(3, int(3.4 * sc / 1.0 * 0.5))
 
     def seg(a, b):
         d.line([a, b], fill=col, width=w)
@@ -148,11 +148,12 @@ def person(kind, x, pose, t, th, who="main", face=1, scale=1.0):
         d.polygon([(head[0] - head_r * 1.25, head[1] + head_r * 0.4), (head[0] + head_r * 1.25, head[1] + head_r * 0.4),
                    (neck[0] + 20 * sc, neck[1] + 34 * sc), (neck[0] - 20 * sc, neck[1] + 34 * sc)], fill=col)
         d.ellipse((head[0] - head_r * 0.62 + 3 * sc, head[1] - head_r * 0.5, head[0] + head_r * 0.62 + 3 * sc, head[1] + head_r * 0.55), fill=th["ground"] + (150,) if not th["dark"] else (255, 255, 255, 90))
-    if kind == "man":                        # small prayer cap
+    if kind == "man" and not th.get("limb"):  # small prayer cap (plain silhouettes have none)
         d.pieslice((head[0] - head_r * 1.02, head[1] - head_r * 1.05, head[0] + head_r * 1.02, head[1] + head_r * 0.95), 180, 360, fill=acc)
     if kind == "elder":                      # white beard and cap
         d.polygon([(head[0] - head_r * 0.7, head[1] + head_r * 0.3), (head[0] + head_r * 0.7, head[1] + head_r * 0.3), (head[0] + 2 * sc, head[1] + head_r * 1.9)], fill=(236, 232, 222, 255) if not th["dark"] else (120, 110, 100, 255))
-        d.pieslice((head[0] - head_r * 1.02, head[1] - head_r * 1.05, head[0] + head_r * 1.02, head[1] + head_r * 0.95), 180, 360, fill=acc)
+        if not th.get("limb"):
+            d.pieslice((head[0] - head_r * 1.02, head[1] - head_r * 1.05, head[0] + head_r * 1.02, head[1] + head_r * 0.95), 180, 360, fill=acc)
     patch = patch.resize((pw, ph), Image.LANCZOS)
     if face < 0:
         patch = ImageOps.mirror(patch)
@@ -273,7 +274,6 @@ def draw_prop(img, kind, x, th, scale=1.0, y=None, text="", t=0.0):
     elif kind == "lamp":
         d.pieslice((cx - 26 * s, gy - 60 * s, cx + 26 * s, gy - 4 * s), 180, 360, fill=ac)
         rect(-2, -4, 2, 0, ac)
-        d.ellipse((cx - 90 * s, gy - 100 * s, cx + 90 * s, gy + 40 * s), outline=None, fill=gl + (26,))
     elif kind == "tears":
         for i, ox in enumerate((-16, 18)):
             yy = ((t * 70 + i * 40) % 80)
@@ -301,3 +301,32 @@ def draw_prop(img, kind, x, th, scale=1.0, y=None, text="", t=0.0):
     else:
         raise ValueError(f"unknown prop {kind}")
     img.alpha_composite(big.resize((W, H), Image.LANCZOS))
+
+
+def sil_theme(th):
+    """Silhouette look (like the reference reels): near-black thick-limbed figures against a glowing horizon."""
+    dark = (10, 8, 7) if not th["dark"] else (46, 30, 24)
+    return dict(th, fig=dark, other=lerp(dark, th["bot"], 0.3), prop=lerp(th["bot"], th["accent"], 0.55), limb=12)
+
+
+def backdrop_sil(th, kind="none", seed=0):
+    """Sky, big sun with halo, smoky horizon band, dark ground with soft wavy light lines."""
+    img = backdrop(th, kind, seed, ground=False, calm=True)
+    # the dark band below the horizon is drawn last so scenery stays behind the ground
+    haze = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    hd = ImageDraw.Draw(haze)
+    hd.ellipse((-260, GROUND - 330, W + 260, GROUND + 90), fill=th["glow"] + (70,))
+    hd.ellipse((-60, GROUND - 170, W + 60, GROUND + 40), fill=th["glow"] + (60,))
+    img.alpha_composite(haze.filter(ImageFilter.GaussianBlur(70)))
+    sun = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    sd = ImageDraw.Draw(sun)
+    sx, sy = 170 if seed % 2 == 0 else 550, 150
+    sd.ellipse((sx - 130, sy - 130, sx + 130, sy + 130), fill=th["glow"] + (60,))
+    img.alpha_composite(sun.filter(ImageFilter.GaussianBlur(40)))
+    d = ImageDraw.Draw(img)
+    d.ellipse((sx - 31, sy - 31, sx + 31, sy + 31), fill=lerp(th["glow"], th["accent"], 0.5) + (255,))
+    d.rectangle((0, GROUND, W, H), fill=th["ground"] + (255,))
+    for k, (yy, amp, a) in enumerate(((0, 8, 190), (10, 5, 90), (120, 14, 70))):
+        pts = [(x, GROUND + yy + amp * math.sin(x / 90.0 + k * 1.7 + seed)) for x in range(0, W + 20, 20)]
+        d.line(pts, fill=th["accent"] + (a,), width=2)
+    return img

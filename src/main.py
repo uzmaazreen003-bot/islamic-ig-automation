@@ -15,7 +15,7 @@ import os
 import sys
 import tempfile
 
-from . import activity, carousel, cards, content, publish, story, story2, tasbih
+from . import activity, boulder, world, carousel, explainer, narrate, cards, content, publish, story, story2, tasbih
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.environ.get("IG_DATA_DIR") or os.path.join(ROOT, "data")
@@ -82,11 +82,12 @@ def cmd_plan(args):
             print(f"[plan] nothing due right now ({now.strftime('%H:%M')} IST); today's posts are done or not yet due")
             gh_output(skip="true")
             return 0
+    narrate.configure(cfg)
     kind = content.pick_kind(slot, history) if args.kind == "auto" else args.kind
     key = content.pick_key(kind, pools, history, today, args.key or None)
     item = pools[kind][key]
     fmt = args.format if args.format != "auto" else (slot.get("format") or content.default_format(kind))
-    if kind in ("tasbih", "story", "quiz", "checklist"):
+    if kind in ("tasbih", "story", "quiz", "checklist", "explainer", "boulder", "world"):
         fmt = "reel"
     if kind == "hadith":
         fmt = "carousel"
@@ -105,6 +106,21 @@ def cmd_plan(args):
         out = os.path.join(OUT, f"{stem}.mp4")
         with tempfile.TemporaryDirectory() as tmp:
             info = tasbih.make_reel(item, pools["dhikr_lib"], handle, out, seed=seed, workdir=tmp, voice_mode=cfg.get("dhikr_voice", "files"))
+        files = [out]
+    elif kind == "explainer":
+        out = os.path.join(OUT, f"{stem}.mp4")
+        with tempfile.TemporaryDirectory() as tmp:
+            info = explainer.make_reel(item, handle, out, seed=seed, workdir=tmp, voice_on=cfg.get("story_voice", True))
+        files = [out]
+    elif kind == "world":
+        out = os.path.join(OUT, f"{stem}.mp4")
+        with tempfile.TemporaryDirectory() as tmp:
+            info = world.make_reel(item, handle, out, seed=seed, workdir=tmp, count=cfg.get("boulder_count", 33))
+        files = [out]
+    elif kind == "boulder":
+        out = os.path.join(OUT, f"{stem}.mp4")
+        with tempfile.TemporaryDirectory() as tmp:
+            info = boulder.make_reel(item, handle, out, seed=seed, workdir=tmp, count=cfg.get("boulder_count", 33), theme_name=item["theme"])
         files = [out]
     elif kind == "quiz":
         out = os.path.join(OUT, f"{stem}.mp4")
@@ -196,7 +212,7 @@ def main(argv=None):
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
     p = sub.add_parser("plan")
-    p.add_argument("--kind", default="auto", choices=["auto", "tasbih", "ayah", "dua", "hadith", "story", "quiz", "checklist"])
+    p.add_argument("--kind", default="auto", choices=["auto", "tasbih", "ayah", "dua", "hadith", "story", "quiz", "checklist", "explainer", "boulder", "world"])
     p.add_argument("--format", default="auto", choices=["auto", "reel", "carousel"])
     p.add_argument("--key", default="")
     p.add_argument("--force", action="store_true")

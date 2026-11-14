@@ -26,7 +26,20 @@ def load_pools(data_dir):
     stories = {s["id"]: s for s in rd("stories.json")["stories"]}
     quizzes = {s["id"]: s for s in rd("quizzes.json")["quizzes"]}
     checklists = {s["id"]: s for s in dhikr["checklists"]}
+    topics = {t["id"]: t for t in rd("explainers.json")["topics"]}
+    themes = ["emerald", "maroon", "plum", "amber"]
+    boulder = {k: dict(v, key=k, theme=themes[i % len(themes)]) for i, (k, v) in enumerate(dhikr["dhikr"].items())}
+    worlds = {f"{sc}-{ph}": dict(dhikr["dhikr"][ph], key=f"{sc}-{ph}", scene=sc, closing=cl) for sc, ph, cl in (
+        ("oasis", "astaghfirullah", "Little by little, the dry land turned green."),
+        ("lanterns", "allahuakbar", "One by one, the light came back."),
+        ("dawn", "alhamdulillah", "And the night gave way to morning."),
+        ("oasis", "subhanallah", "Little by little, the dry land turned green."),
+        ("lanterns", "salawat", "One by one, the light came back."),
+        ("dawn", "hawqala", "And the night gave way to morning."))}
     return {
+        "world": worlds,
+        "explainer": topics,
+        "boulder": boulder,
         "quiz": quizzes,
         "checklist": checklists,
         "ayah": {i["ref"]: i for i in quran if i["kind"] == "ayah"},
@@ -87,7 +100,7 @@ def pick_key(kind, pools, history, today, force_key=None):
 
 
 def default_format(kind):
-    return {"tasbih": "reel", "story": "reel", "quiz": "reel", "checklist": "reel", "hadith": "carousel"}.get(kind, "reel")
+    return {"tasbih": "reel", "story": "reel", "quiz": "reel", "checklist": "reel", "explainer": "reel", "boulder": "reel", "world": "reel", "hadith": "carousel"}.get(kind, "reel")
 
 
 # ------------------------------------------------------------------ captions
@@ -113,6 +126,16 @@ def caption(kind, item, cfg, dhikr_lib=None, pools=None):
         body = f"{item['title']} 🤍\n\nCount along with the beads:\n" + "\n".join(f"{n}× {x}" for x in names)
         if item.get("source"):
             body += f"\n\nThe sunnah is 33 of each after every prayer: repeat this 3 times ({item['source']})."
+    elif kind == "explainer":
+        refs = [ch["quote"]["ref"] for ch in item["chapters"] if ch.get("quote")]
+        steps = [ch["heading"] for ch in item["chapters"][1:-1]]
+        body = f"{item['title']} ✨\n\n" + "\n".join(f"• {s}" for s in steps) + "\n\nSources: " + ", ".join(refs) + "\n\nWhich one do you need most today? Tell us below 👇"
+    elif kind == "world":
+        body = (f"{item['tr']} — {item['en']}\n\nWatch the world change with every dhikr. Say it slowly and count along (33).\n"
+                "The sunnah is 33 each after every prayer (Sahih Muslim 597).")
+    elif kind == "boulder":
+        body = (f"{item['tr']} — {item['en']}\n\nOne small strike at a time. Say it slowly and count along with the reel (33).\n"
+                "The sunnah is 33 each after every prayer (Sahih Muslim 597).")
     elif kind == "checklist":
         body = f"{item['title']} ✅\n\nSay each one slowly and tick along:\n" + "\n".join(f"✔ {pools['dhikr_lib'][k]['tr']} — {pools['dhikr_lib'][k]['en']}" for k in item["items"])
     elif kind == "quiz":
